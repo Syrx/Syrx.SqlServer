@@ -7,10 +7,10 @@
     <Authors>@sextondjc</Authors>
     <Company />
     <Description>Syrx connector specifically for connecting to SQL Server using the System.Data.SqlClient Client Factory.</Description>
-    <PackageLicenseUrl>https://sextondjc.github.io/Syrx/</PackageLicenseUrl>
-    <PackageProjectUrl>https://sextondjc.github.io/Syrx/</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/sextondjc/Syrx/</RepositoryUrl>
-    <PackageReleaseNotes>1.0.0 release, ported to .NET Standard 2.0.</PackageReleaseNotes>
+    <PackageLicenseUrl>https://github.com/SyrxCommander/Syrx.SqlServer</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/SyrxCommander/Syrx.SqlServer</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/SyrxCommander/Syrx.SqlServer</RepositoryUrl>
+    <PackageReleaseNotes>• Updated package information.</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
