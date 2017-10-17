@@ -38,7 +38,7 @@ namespace Syrx.Connectors.Databases.SqlServer.Unit.Tests.SqlServerDatabaseConnec
                 }
                 , new List<ConnectionStringSetting>
                 {
-                    new ConnectionStringSetting("test.alias", "System.Data.SqlClient", "Data Source=(LocalDb)\\mssqllocaldb;Initial Catalog=master;Integrated Security=true;")
+                    new ConnectionStringSetting("test.alias", "Data Source=(LocalDb)\\mssqllocaldb;Initial Catalog=master;Integrated Security=true;")
                 });
 
             _connector = new SqlServerDatabaseConnector(_settings);

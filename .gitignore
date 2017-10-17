@@ -72,3 +72,10 @@ Temporary Items
 /Tests/Syrx.Tests.Models/obj/Debug/netstandard2.0
 /Tests/Syrx.Tests.Models/obj
 /_NCrunch_Syrx.SqlServer
+/Core/Syrx.Connectors.Databases.SqlServer/bin/Debug
+/Core/Syrx.SqlServer/bin/Debug
+/Tests/Syrx.Commanders.Databases.Integration.Tests/bin/Debug/netcoreapp2.0
+/Tests/Syrx.Connectors.Databases.SqlServer.Unit.Tests/bin/Debug/netcoreapp2.0
+/Tests/Syrx.SqlServer.Integration.Tests/bin/Debug/netcoreapp2.0
+/Tests/Syrx.Tests.Common/bin/Debug/netstandard2.0
+/Tests/Syrx.Tests.Models/bin/Debug/netstandard2.0

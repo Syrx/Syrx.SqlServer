@@ -36,7 +36,7 @@ namespace Syrx.Connectors.Databases.SqlServer.Unit.Tests.SqlServerDatabaseConnec
                 }
                 , new List<ConnectionStringSetting>
                 {
-                    new ConnectionStringSetting("test.alias", "providerName", "connectionString")
+                    new ConnectionStringSetting("test.alias", "connectionString")
                 });
         }        
 
