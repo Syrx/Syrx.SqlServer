@@ -1076,13 +1076,11 @@
   ],
   "Connections": [
     {
-      "Alias": "Syrx.Sql",
-      "ProviderName": "System.Data.SqlClient",
+      "Alias": "Syrx.Sql",      
       "ConnectionString": "Data Source=(LocalDb)\\mssqllocaldb;Initial Catalog=Syrx;Integrated Security=true;"
     },
     {
-      "Alias": "Syrx.Sql.Master",
-      "ProviderName": "System.Data.SqlClient",
+      "Alias": "Syrx.Sql.Master",      
       "ConnectionString": "Data Source=(LocalDb)\\mssqllocaldb;Initial Catalog=master;Integrated Security=true;"
     }
   ]
