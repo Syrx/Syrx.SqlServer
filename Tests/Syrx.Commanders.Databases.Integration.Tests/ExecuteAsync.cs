@@ -118,7 +118,7 @@ namespace Syrx.Commanders.Databases.Integration.Tests
             var result = await ThrowsAnyAsync<Exception>(() => _commander.ExecuteAsync(model));
             const string expected =
                 "Arithmetic overflow error converting expression to data type float.\r\nThe statement has been terminated.";
-            //Equal(expected, result.Message);
+            Equal(expected, result.Message);
 
             // check if the record has been rolled back.
             // ReSharper disable once ExplicitCallerInfoArgument
