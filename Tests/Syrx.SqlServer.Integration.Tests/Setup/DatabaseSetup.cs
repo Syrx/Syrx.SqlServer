@@ -91,23 +91,12 @@ namespace Syrx.SqlServer.Integration.Tests.Setup
             _commander.Query<string>(new {name});
             Console.WriteLine($"{name} created!");
         }
-
-        private void DropDatabase(string name = "Syrx")
-        {
-            _commander.Execute(new {name});
-            Console.WriteLine($"{name} dropped!");
-        }
-
+        
         private bool DatabaseExists(string name = "Syrx")
         {
             return _commander.Query<bool>(new {name}).SingleOrDefault();
         }
-
-        private void DropAllTables(string name)
-        {
-            _commander.Execute(new {name});
-        }
-
+        
         #endregion
 
         #region / tables / 

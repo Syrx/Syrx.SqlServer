@@ -7,6 +7,7 @@
 
 using System;
 using System.Collections.Generic;
+// ReSharper disable InconsistentNaming
 
 namespace Syrx.Tests.Models
 {

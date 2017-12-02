@@ -6,6 +6,7 @@
 //  =============================================================================================================================
 
 using System;
+// ReSharper disable InconsistentNaming
 
 namespace Syrx.Tests.Models
 {
