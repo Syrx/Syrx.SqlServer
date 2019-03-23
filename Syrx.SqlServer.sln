@@ -3,21 +3,25 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Syrx.Connectors.Databases.SqlServer", "Core\Syrx.Connectors.Databases.SqlServer\Syrx.Connectors.Databases.SqlServer.csproj", "{E7C3B7EC-B97D-4DBA-9BF6-1AC10FEF22D4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Syrx.Connectors.Databases.SqlServer", "src\Syrx.Connectors.Databases.SqlServer\Syrx.Connectors.Databases.SqlServer.csproj", "{E7C3B7EC-B97D-4DBA-9BF6-1AC10FEF22D4}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{7278E8F6-25BE-4CF3-A56B-AD4652DCF531}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{7278E8F6-25BE-4CF3-A56B-AD4652DCF531}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Syrx.Connectors.Databases.SqlServer.Unit.Tests", "Tests\Syrx.Connectors.Databases.SqlServer.Unit.Tests\Syrx.Connectors.Databases.SqlServer.Unit.Tests.csproj", "{40CC7F86-F575-4CB2-9D01-08052F70B363}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Syrx.Connectors.Databases.SqlServer.Unit.Tests", "tests\Syrx.Connectors.Databases.SqlServer.Unit.Tests\Syrx.Connectors.Databases.SqlServer.Unit.Tests.csproj", "{40CC7F86-F575-4CB2-9D01-08052F70B363}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Syrx.SqlServer", "Core\Syrx.SqlServer\Syrx.SqlServer.csproj", "{6CAC7CB5-92CC-416A-A181-1238037F316C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Syrx.SqlServer", "src\Syrx.SqlServer\Syrx.SqlServer.csproj", "{6CAC7CB5-92CC-416A-A181-1238037F316C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Syrx.SqlServer.Integration.Tests", "Tests\Syrx.SqlServer.Integration.Tests\Syrx.SqlServer.Integration.Tests.csproj", "{80203C0A-68D1-4A3D-9138-A08544FAF99E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Syrx.SqlServer.Integration.Tests", "tests\Syrx.SqlServer.Integration.Tests\Syrx.SqlServer.Integration.Tests.csproj", "{80203C0A-68D1-4A3D-9138-A08544FAF99E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Syrx.Tests.Models", "Tests\Syrx.Tests.Models\Syrx.Tests.Models.csproj", "{DB53C171-37A7-4E5D-A7BC-FB75492B6BCA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Syrx.Tests.Models", "tests\Syrx.Tests.Models\Syrx.Tests.Models.csproj", "{DB53C171-37A7-4E5D-A7BC-FB75492B6BCA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Syrx.Tests.Common", "Tests\Syrx.Tests.Common\Syrx.Tests.Common.csproj", "{47362A6C-AA51-41E0-A9E9-C228176503F7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Syrx.Tests.Common", "tests\Syrx.Tests.Common\Syrx.Tests.Common.csproj", "{47362A6C-AA51-41E0-A9E9-C228176503F7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Syrx.Commanders.Databases.Integration.Tests", "Tests\Syrx.Commanders.Databases.Integration.Tests\Syrx.Commanders.Databases.Integration.Tests.csproj", "{7CFEE633-865F-4DBA-B5FC-0AA9734B0182}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Syrx.Commanders.Databases.Integration.Tests", "tests\Syrx.Commanders.Databases.Integration.Tests\Syrx.Commanders.Databases.Integration.Tests.csproj", "{7CFEE633-865F-4DBA-B5FC-0AA9734B0182}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{C1F1486E-D32A-4C74-AA98-EFA8D32A2D28}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{AAE457A3-C435-4EB9-8D40-59F3F38F67D7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -58,7 +62,9 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{E7C3B7EC-B97D-4DBA-9BF6-1AC10FEF22D4} = {AAE457A3-C435-4EB9-8D40-59F3F38F67D7}
 		{40CC7F86-F575-4CB2-9D01-08052F70B363} = {7278E8F6-25BE-4CF3-A56B-AD4652DCF531}
+		{6CAC7CB5-92CC-416A-A181-1238037F316C} = {AAE457A3-C435-4EB9-8D40-59F3F38F67D7}
 		{80203C0A-68D1-4A3D-9138-A08544FAF99E} = {7278E8F6-25BE-4CF3-A56B-AD4652DCF531}
 		{DB53C171-37A7-4E5D-A7BC-FB75492B6BCA} = {7278E8F6-25BE-4CF3-A56B-AD4652DCF531}
 		{47362A6C-AA51-41E0-A9E9-C228176503F7} = {7278E8F6-25BE-4CF3-A56B-AD4652DCF531}

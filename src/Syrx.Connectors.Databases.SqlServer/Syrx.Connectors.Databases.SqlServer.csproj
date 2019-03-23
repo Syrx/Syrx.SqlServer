@@ -1,22 +1,22 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>1.1.0</Version>
+    <Version>1.2.0</Version>
     <Authors>@sextondjc</Authors>
     <Company />
     <Description>Syrx connector specifically for connecting to SQL Server using the System.Data.SqlClient Client Factory.</Description>
     <PackageLicenseUrl>https://github.com/Syrx</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/Syrx</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Syrx</RepositoryUrl>
-    <PackageReleaseNotes>• Updated to use Syrx.Connectors.Databases 1.1.0</PackageReleaseNotes>
+    <PackageReleaseNotes>• Updated dependency</PackageReleaseNotes>
     <Copyright>https://github.com/Syrx</Copyright>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Syrx.Connectors.Databases" Version="1.1.0" />
-    <PackageReference Include="System.Data.SqlClient" Version="4.4.0" />
+    <PackageReference Include="Syrx.Connectors.Databases" Version="1.*" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.*" />
   </ItemGroup>
 
 </Project>
