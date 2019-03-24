@@ -8,6 +8,7 @@
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using System.Threading.Tasks;
 using Syrx.Tests.Models;
 using Xunit;
 using static Xunit.Assert;
@@ -15,12 +16,12 @@ using static Xunit.Assert;
 namespace Syrx.Commanders.Databases.Integration.Tests
 {
     [SuppressMessage("ReSharper", "PossibleMultipleEnumeration")]
-    public abstract partial class Query
+    public abstract partial class QueryAsync
     {
         [Fact]
-        public void MultimapFiveTypesWithNoParameters()
+        public async Task MultimapFiveTypesWithNoParameters()
         {
-            var result = _commander.Query(Map.Query.Multimap.WithFiveParameters);
+            var result = await _commander.QueryAsync(Map.Query.Multimap.WithFiveParameters);
 
             NotNull(result);
             IsAssignableFrom<IEnumerable<MultiMapPocoD>>(result);
@@ -59,14 +60,14 @@ namespace Syrx.Commanders.Databases.Integration.Tests
         }
 
         [Fact]
-        public void MultimapFiveTypesWithParameters()
+        public async Task MultimapFiveTypesWithParameters()
         {
-            var result = _commander.Query(Map.Query.Multimap.WithFiveParameters, new {Id = 8});
+            var result = await _commander.QueryAsync(Map.Query.Multimap.WithFiveParameters, new {Id = 8});
 
             NotNull(result);
             IsAssignableFrom<IEnumerable<MultiMapPocoD>>(result);
             True(result.Any());
-            Equal(1, result.Count());
+            Single(result);
 
             // first record
             var first = result.First();
@@ -100,9 +101,9 @@ namespace Syrx.Commanders.Databases.Integration.Tests
         }
 
         [Fact]
-        public void MultimapFourTypesWithNoParameters()
+        public async Task MultimapFourTypesWithNoParameters()
         {
-            var result = _commander.Query(Map.Query.Multimap.WithFourParameters);
+            var result = await _commander.QueryAsync(Map.Query.Multimap.WithFourParameters);
 
             NotNull(result);
             IsAssignableFrom<IEnumerable<MultiMapPocoC>>(result);
@@ -135,14 +136,14 @@ namespace Syrx.Commanders.Databases.Integration.Tests
         }
 
         [Fact]
-        public void MultimapFourTypesWithParameters()
+        public async Task MultimapFourTypesWithParameters()
         {
-            var result = _commander.Query(Map.Query.Multimap.WithFourParameters, new {Id = 8});
+            var result = await _commander.QueryAsync(Map.Query.Multimap.WithFourParameters, new {Id = 8});
 
             NotNull(result);
             IsAssignableFrom<IEnumerable<MultiMapPocoC>>(result);
             True(result.Any());
-            Equal(1, result.Count());
+            Single(result);
 
             // first record
             var first = result.First();
@@ -170,9 +171,9 @@ namespace Syrx.Commanders.Databases.Integration.Tests
         }
 
         [Fact]
-        public void MultimapSevenTypesWithNoParameters()
+        public async Task MultimapSevenTypesWithNoParameters()
         {
-            var result = _commander.Query(Map.Query.Multimap.WithSevenParameters);
+            var result = await _commander.QueryAsync(Map.Query.Multimap.WithSevenParameters);
 
             NotNull(result);
             IsAssignableFrom<IEnumerable<MultiMapPocoF>>(result);
@@ -223,14 +224,14 @@ namespace Syrx.Commanders.Databases.Integration.Tests
         }
 
         [Fact]
-        public void MultimapSevenTypesWithParameters()
+        public async Task MultimapSevenTypesWithParameters()
         {
-            var result = _commander.Query(Map.Query.Multimap.WithSevenParameters, new {Id = 8});
+            var result = await _commander.QueryAsync(Map.Query.Multimap.WithSevenParameters, new {Id = 8});
 
             NotNull(result);
             IsAssignableFrom<IEnumerable<MultiMapPocoF>>(result);
             True(result.Any());
-            Equal(1, result.Count());
+            Single(result);
 
             // first record
             var first = result.First();
@@ -276,9 +277,9 @@ namespace Syrx.Commanders.Databases.Integration.Tests
         }
 
         [Fact]
-        public void MultimapSixTypesWithNoParameters()
+        public async Task MultimapSixTypesWithNoParameters()
         {
-            var result = _commander.Query(Map.Query.Multimap.WithSixParameters);
+            var result = await _commander.QueryAsync(Map.Query.Multimap.WithSixParameters);
 
             NotNull(result);
             IsAssignableFrom<IEnumerable<MultiMapPocoE>>(result);
@@ -323,14 +324,14 @@ namespace Syrx.Commanders.Databases.Integration.Tests
         }
 
         [Fact]
-        public void MultimapSixTypesWithParameters()
+        public async Task MultimapSixTypesWithParameters()
         {
-            var result = _commander.Query(Map.Query.Multimap.WithSixParameters, new {Id = 8});
+            var result = await _commander.QueryAsync(Map.Query.Multimap.WithSixParameters, new {Id = 8});
 
             NotNull(result);
             IsAssignableFrom<IEnumerable<MultiMapPocoE>>(result);
             True(result.Any());
-            Equal(1, result.Count());
+            Single(result);
 
             // first record
             var first = result.First();
@@ -370,9 +371,9 @@ namespace Syrx.Commanders.Databases.Integration.Tests
         }
 
         [Fact]
-        public void MultimapThreeTypesWithNoParameters()
+        public async Task MultimapThreeTypesWithNoParameters()
         {
-            var result = _commander.Query(Map.Query.Multimap.WithThreeParameters);
+            var result = await _commander.QueryAsync(Map.Query.Multimap.WithThreeParameters);
 
             NotNull(result);
             IsAssignableFrom<IEnumerable<MultiMapPocoB>>(result);
@@ -399,14 +400,14 @@ namespace Syrx.Commanders.Databases.Integration.Tests
         }
 
         [Fact]
-        public void MultimapThreeTypesWithParameters()
+        public async Task MultimapThreeTypesWithParameters()
         {
-            var result = _commander.Query(Map.Query.Multimap.WithThreeParameters, new {Id = 8});
+            var result = await _commander.QueryAsync(Map.Query.Multimap.WithThreeParameters, new {Id = 8});
 
             NotNull(result);
             IsAssignableFrom<IEnumerable<MultiMapPocoB>>(result);
             True(result.Any());
-            Equal(1, result.Count());
+            Single(result);
 
             // first record
             var first = result.First();
@@ -428,9 +429,9 @@ namespace Syrx.Commanders.Databases.Integration.Tests
         }
 
         [Fact]
-        public void MultimapTwoTypesWithNoParameters()
+        public async Task MultimapTwoTypesWithNoParameters()
         {
-            var result = _commander.Query(Map.Query.Multimap.WithTwoParameters);
+            var result = await _commander.QueryAsync(Map.Query.Multimap.WithTwoParameters);
 
             NotNull(result);
             IsAssignableFrom<IEnumerable<MultiMapPocoA>>(result);
@@ -451,14 +452,14 @@ namespace Syrx.Commanders.Databases.Integration.Tests
         }
 
         [Fact]
-        public void MultimapTwoTypesWithParameters()
+        public async Task MultimapTwoTypesWithParameters()
         {
-            var result = _commander.Query(Map.Query.Multimap.WithTwoParameters, new {Id = 8});
+            var result = await _commander.QueryAsync(Map.Query.Multimap.WithTwoParameters, new {Id = 8});
 
             NotNull(result);
             IsAssignableFrom<IEnumerable<MultiMapPocoA>>(result);
             True(result.Any());
-            Equal(1, result.Count());
+            Single(result);
 
             // first record
             var first = result.First();

@@ -7,7 +7,6 @@
 
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
-using System.Threading.Tasks;
 using Syrx.Tests.Models;
 using Xunit;
 using static Xunit.Assert;
@@ -15,12 +14,12 @@ using static Xunit.Assert;
 namespace Syrx.Commanders.Databases.Integration.Tests
 {
     [SuppressMessage("ReSharper", "PossibleMultipleEnumeration")]
-    public abstract partial class QueryAsync
+    public abstract partial class Query
     {
         [Fact]
-        public async Task MultipleEightTypesWithNoParameters()
+        public void MultipleEightTypesWithNoParameters()
         {
-            var result = await _commander.QueryAsync(Map.Query.Multiple.WithEightTypes);
+            var result = _commander.Query(Map.Query.Multiple.WithEightTypes);
 
             var record = result.First();
             NotNull(record);
@@ -30,7 +29,7 @@ namespace Syrx.Commanders.Databases.Integration.Tests
             var collectionA = record.CollectionA;
             NotNull(collectionA);
             True(collectionA.Any());
-            Equal(1, collectionA.Count());
+            Single(collectionA);
 
             // evaluate first result (way too much mission to evaluate all of them). 
             var a1 = collectionA.First();
@@ -139,9 +138,9 @@ namespace Syrx.Commanders.Databases.Integration.Tests
         }
 
         [Fact]
-        public async Task MultipleEightTypesWithParameters()
+        public void MultipleEightTypesWithParameters()
         {
-            var result = await _commander.QueryAsync(Map.Query.Multiple.WithEightTypes, new {Id = 36});
+            var result = _commander.Query(Map.Query.Multiple.WithEightTypes, new {Id = 36});
 
             var record = result.First();
             NotNull(record);
@@ -151,7 +150,7 @@ namespace Syrx.Commanders.Databases.Integration.Tests
             var collectionA = record.CollectionA;
             NotNull(collectionA);
             True(collectionA.Any());
-            Equal(1, collectionA.Count());
+            Single(collectionA);
 
             // evaluate first result (way too much mission to evaluate all of them). 
             var a1 = collectionA.First();
@@ -249,7 +248,7 @@ namespace Syrx.Commanders.Databases.Integration.Tests
             var collectionH = record.CollectionH;
             NotNull(collectionH);
             True(collectionH.Any());
-            Equal(1, collectionH.Count());
+            Single(collectionH);
 
             // evaluate first result (way too much mission to evaluate all of them). 
             var h1 = collectionH.First();
@@ -260,9 +259,9 @@ namespace Syrx.Commanders.Databases.Integration.Tests
         }
 
         [Fact]
-        public async Task MultipleElevenTypesWithNoParameters()
+        public void MultipleElevenTypesWithNoParameters()
         {
-            var result = await _commander.QueryAsync(Map.Query.Multiple.WithElevenTypes);
+            var result = _commander.Query(Map.Query.Multiple.WithElevenTypes);
 
             var record = result.First();
             NotNull(record);
@@ -272,7 +271,7 @@ namespace Syrx.Commanders.Databases.Integration.Tests
             var collectionA = record.CollectionA;
             NotNull(collectionA);
             True(collectionA.Any());
-            Equal(1, collectionA.Count());
+            Single(collectionA);
 
             // evaluate first result (way too much mission to evaluate all of them). 
             var a1 = collectionA.First();
@@ -423,9 +422,9 @@ namespace Syrx.Commanders.Databases.Integration.Tests
         }
 
         [Fact]
-        public async Task MultipleElevenTypesWithParameters()
+        public void MultipleElevenTypesWithParameters()
         {
-            var result = await _commander.QueryAsync(Map.Query.Multiple.WithElevenTypes, new {Id = 66});
+            var result = _commander.Query(Map.Query.Multiple.WithElevenTypes, new {Id = 66});
 
             var record = result.First();
             NotNull(record);
@@ -435,7 +434,7 @@ namespace Syrx.Commanders.Databases.Integration.Tests
             var collectionA = record.CollectionA;
             NotNull(collectionA);
             True(collectionA.Any());
-            Equal(1, collectionA.Count());
+            Single(collectionA);
 
             // evaluate first result (way too much mission to evaluate all of them). 
             var a1 = collectionA.First();
@@ -575,7 +574,7 @@ namespace Syrx.Commanders.Databases.Integration.Tests
             var collectionK = record.CollectionK;
             NotNull(collectionK);
             True(collectionK.Any());
-            Equal(1, collectionK.Count());
+            Single(collectionK);
 
             // evaluate first result (way too much mission to evaluate all of them). 
             var k1 = collectionK.First();
@@ -586,9 +585,9 @@ namespace Syrx.Commanders.Databases.Integration.Tests
         }
 
         [Fact]
-        public async Task MultipleFifteenTypesWithNoParameters()
+        public void MultipleFifteenTypesWithNoParameters()
         {
-            var result = await _commander.QueryAsync(Map.Query.Multiple.WithFifteenTypes);
+            var result = _commander.Query(Map.Query.Multiple.WithFifteenTypes);
 
             var record = result.First();
             NotNull(record);
@@ -598,7 +597,7 @@ namespace Syrx.Commanders.Databases.Integration.Tests
             var collectionA = record.CollectionA;
             NotNull(collectionA);
             True(collectionA.Any());
-            Equal(1, collectionA.Count());
+            Single(collectionA);
 
             // evaluate first result (way too much mission to evaluate all of them). 
             var a1 = collectionA.First();
@@ -805,9 +804,9 @@ namespace Syrx.Commanders.Databases.Integration.Tests
         }
 
         [Fact]
-        public async Task MultipleFifteenTypesWithParameters()
+        public void MultipleFifteenTypesWithParameters()
         {
-            var result = await _commander.QueryAsync(Map.Query.Multiple.WithFifteenTypes, new {Id = 120});
+            var result = _commander.Query(Map.Query.Multiple.WithFifteenTypes, new {Id = 120});
 
             var record = result.First();
             NotNull(record);
@@ -817,7 +816,7 @@ namespace Syrx.Commanders.Databases.Integration.Tests
             var collectionA = record.CollectionA;
             NotNull(collectionA);
             True(collectionA.Any());
-            Equal(1, collectionA.Count());
+            Single(collectionA);
 
             // evaluate first result (way too much mission to evaluate all of them). 
             var a1 = collectionA.First();
@@ -1013,7 +1012,7 @@ namespace Syrx.Commanders.Databases.Integration.Tests
             var collectionO = record.CollectionO;
             NotNull(collectionO);
             True(collectionO.Any());
-            Equal(1, collectionO.Count());
+            Single(collectionO);
 
             // evaluate first result (way too much mission to evaluate all of them). 
             var o1 = collectionO.First();
@@ -1024,9 +1023,9 @@ namespace Syrx.Commanders.Databases.Integration.Tests
         }
 
         [Fact]
-        public async Task MultipleFiveTypesWithNoParameters()
+        public void MultipleFiveTypesWithNoParameters()
         {
-            var result = await _commander.QueryAsync(Map.Query.Multiple.WithFiveTypes);
+            var result = _commander.Query(Map.Query.Multiple.WithFiveTypes);
 
             var record = result.First();
             NotNull(record);
@@ -1036,7 +1035,7 @@ namespace Syrx.Commanders.Databases.Integration.Tests
             var collectionA = record.CollectionA;
             NotNull(collectionA);
             True(collectionA.Any());
-            Equal(1, collectionA.Count());
+            Single(collectionA);
 
             // evaluate first result (way too much mission to evaluate all of them). 
             var a1 = collectionA.First();
@@ -1103,9 +1102,9 @@ namespace Syrx.Commanders.Databases.Integration.Tests
         }
 
         [Fact]
-        public async Task MultipleFiveTypesWithParameters()
+        public void MultipleFiveTypesWithParameters()
         {
-            var result = await _commander.QueryAsync(Map.Query.Multiple.WithFiveTypes, new {Id = 15});
+            var result = _commander.Query(Map.Query.Multiple.WithFiveTypes, new {Id = 15});
 
             var record = result.First();
             NotNull(record);
@@ -1115,7 +1114,7 @@ namespace Syrx.Commanders.Databases.Integration.Tests
             var collectionA = record.CollectionA;
             NotNull(collectionA);
             True(collectionA.Any());
-            Equal(1, collectionA.Count());
+            Single(collectionA);
 
             // evaluate first result (way too much mission to evaluate all of them). 
             var a1 = collectionA.First();
@@ -1171,7 +1170,7 @@ namespace Syrx.Commanders.Databases.Integration.Tests
             var collectionE = record.CollectionE;
             NotNull(collectionE);
             True(collectionE.Any());
-            Equal(1, collectionE.Count());
+            Single(collectionE);
 
             // evaluate first result (way too much mission to evaluate all of them). 
             var e1 = collectionE.First();
@@ -1182,9 +1181,9 @@ namespace Syrx.Commanders.Databases.Integration.Tests
         }
 
         [Fact]
-        public async Task MultipleFourteenTypesWithNoParameters()
+        public void MultipleFourteenTypesWithNoParameters()
         {
-            var result = await _commander.QueryAsync(Map.Query.Multiple.WithFourteenTypes);
+            var result = _commander.Query(Map.Query.Multiple.WithFourteenTypes);
 
             var record = result.First();
             NotNull(record);
@@ -1194,7 +1193,7 @@ namespace Syrx.Commanders.Databases.Integration.Tests
             var collectionA = record.CollectionA;
             NotNull(collectionA);
             True(collectionA.Any());
-            Equal(1, collectionA.Count());
+            Single(collectionA);
 
             // evaluate first result (way too much mission to evaluate all of them). 
             var a1 = collectionA.First();
@@ -1387,9 +1386,9 @@ namespace Syrx.Commanders.Databases.Integration.Tests
         }
 
         [Fact]
-        public async Task MultipleFourteenTypesWithParameters()
+        public void MultipleFourteenTypesWithParameters()
         {
-            var result = await _commander.QueryAsync(Map.Query.Multiple.WithFourteenTypes, new {Id = 105});
+            var result = _commander.Query(Map.Query.Multiple.WithFourteenTypes, new {Id = 105});
 
             var record = result.First();
             NotNull(record);
@@ -1399,7 +1398,7 @@ namespace Syrx.Commanders.Databases.Integration.Tests
             var collectionA = record.CollectionA;
             NotNull(collectionA);
             True(collectionA.Any());
-            Equal(1, collectionA.Count());
+            Single(collectionA);
 
             // evaluate first result (way too much mission to evaluate all of them). 
             var a1 = collectionA.First();
@@ -1581,7 +1580,7 @@ namespace Syrx.Commanders.Databases.Integration.Tests
             var collectionN = record.CollectionN;
             NotNull(collectionN);
             True(collectionN.Any());
-            Equal(1, collectionN.Count());
+            Single(collectionN);
 
             // evaluate first result (way too much mission to evaluate all of them). 
             var n1 = collectionN.First();
@@ -1592,9 +1591,9 @@ namespace Syrx.Commanders.Databases.Integration.Tests
         }
 
         [Fact]
-        public async Task MultipleFourTypesWithNoParameters()
+        public void MultipleFourTypesWithNoParameters()
         {
-            var result = await _commander.QueryAsync(Map.Query.Multiple.WithFourTypes);
+            var result = _commander.Query(Map.Query.Multiple.WithFourTypes);
 
             var record = result.First();
             NotNull(record);
@@ -1604,7 +1603,7 @@ namespace Syrx.Commanders.Databases.Integration.Tests
             var collectionA = record.CollectionA;
             NotNull(collectionA);
             True(collectionA.Any());
-            Equal(1, collectionA.Count());
+            Single(collectionA);
 
             // evaluate first result (way too much mission to evaluate all of them). 
             var a1 = collectionA.First();
@@ -1657,9 +1656,9 @@ namespace Syrx.Commanders.Databases.Integration.Tests
         }
 
         [Fact]
-        public async Task MultipleFourTypesWithParameters()
+        public void MultipleFourTypesWithParameters()
         {
-            var result = await _commander.QueryAsync(Map.Query.Multiple.WithFourTypes, new {Id = 10});
+            var result = _commander.Query(Map.Query.Multiple.WithFourTypes, new {Id = 10});
 
             var record = result.First();
             NotNull(record);
@@ -1669,7 +1668,7 @@ namespace Syrx.Commanders.Databases.Integration.Tests
             var collectionA = record.CollectionA;
             NotNull(collectionA);
             True(collectionA.Any());
-            Equal(1, collectionA.Count());
+            Single(collectionA);
 
             // evaluate first result (way too much mission to evaluate all of them). 
             var a1 = collectionA.First();
@@ -1711,7 +1710,7 @@ namespace Syrx.Commanders.Databases.Integration.Tests
             var collectionD = record.CollectionD;
             NotNull(collectionD);
             True(collectionD.Any());
-            Equal(1, collectionD.Count());
+            Single(collectionD);
 
             // evaluate first result (way too much mission to evaluate all of them). 
             var d1 = collectionD.First();
@@ -1722,9 +1721,9 @@ namespace Syrx.Commanders.Databases.Integration.Tests
         }
 
         [Fact]
-        public async Task MultipleNineTypesWithNoParameters()
+        public void MultipleNineTypesWithNoParameters()
         {
-            var result = await _commander.QueryAsync(Map.Query.Multiple.WithNineTypes);
+            var result = _commander.Query(Map.Query.Multiple.WithNineTypes);
 
             var record = result.First();
             NotNull(record);
@@ -1734,7 +1733,7 @@ namespace Syrx.Commanders.Databases.Integration.Tests
             var collectionA = record.CollectionA;
             NotNull(collectionA);
             True(collectionA.Any());
-            Equal(1, collectionA.Count());
+            Single(collectionA);
 
             // evaluate first result (way too much mission to evaluate all of them). 
             var a1 = collectionA.First();
@@ -1857,9 +1856,9 @@ namespace Syrx.Commanders.Databases.Integration.Tests
         }
 
         [Fact]
-        public async Task MultipleNineTypesWithParameters()
+        public void MultipleNineTypesWithParameters()
         {
-            var result = await _commander.QueryAsync(Map.Query.Multiple.WithNineTypes, new {Id = 45});
+            var result = _commander.Query(Map.Query.Multiple.WithNineTypes, new {Id = 45});
 
             var record = result.First();
             NotNull(record);
@@ -1869,7 +1868,7 @@ namespace Syrx.Commanders.Databases.Integration.Tests
             var collectionA = record.CollectionA;
             NotNull(collectionA);
             True(collectionA.Any());
-            Equal(1, collectionA.Count());
+            Single(collectionA);
 
             // evaluate first result (way too much mission to evaluate all of them). 
             var a1 = collectionA.First();
@@ -1981,7 +1980,7 @@ namespace Syrx.Commanders.Databases.Integration.Tests
             var collectionI = record.CollectionI;
             NotNull(collectionI);
             True(collectionI.Any());
-            Equal(1, collectionI.Count());
+            Single(collectionI);
 
             // evaluate first result (way too much mission to evaluate all of them). 
             var i1 = collectionI.First();
@@ -1992,9 +1991,9 @@ namespace Syrx.Commanders.Databases.Integration.Tests
         }
 
         [Fact]
-        public async Task MultipleOneTypeWithNoParameters()
+        public void MultipleOneTypeWithNoParameters()
         {
-            var result = await _commander.QueryAsync(Map.Query.Multiple.WithOneType);
+            var result = _commander.Query(Map.Query.Multiple.WithOneType);
 
             var record = result.First();
             NotNull(record);
@@ -2004,7 +2003,7 @@ namespace Syrx.Commanders.Databases.Integration.Tests
             var collectionA = record.CollectionA;
             NotNull(collectionA);
             True(collectionA.Any());
-            Equal(1, collectionA.Count());
+            Single(collectionA);
 
             // evaluate first result (way too much mission to evaluate all of them). 
             var a1 = collectionA.First();
@@ -2015,9 +2014,9 @@ namespace Syrx.Commanders.Databases.Integration.Tests
         }
 
         [Fact]
-        public async Task MultipleSevenTypesWithNoParameters()
+        public void MultipleSevenTypesWithNoParameters()
         {
-            var result = await _commander.QueryAsync(Map.Query.Multiple.WithSevenTypes);
+            var result = _commander.Query(Map.Query.Multiple.WithSevenTypes);
 
             var record = result.First();
             NotNull(record);
@@ -2027,7 +2026,7 @@ namespace Syrx.Commanders.Databases.Integration.Tests
             var collectionA = record.CollectionA;
             NotNull(collectionA);
             True(collectionA.Any());
-            Equal(1, collectionA.Count());
+            Single(collectionA);
 
             // evaluate first result (way too much mission to evaluate all of them). 
             var a1 = collectionA.First();
@@ -2122,9 +2121,9 @@ namespace Syrx.Commanders.Databases.Integration.Tests
         }
 
         [Fact]
-        public async Task MultipleSevenTypesWithParameters()
+        public void MultipleSevenTypesWithParameters()
         {
-            var result = await _commander.QueryAsync(Map.Query.Multiple.WithSevenTypes, new {Id = 28});
+            var result = _commander.Query(Map.Query.Multiple.WithSevenTypes, new {Id = 28});
 
             var record = result.First();
             NotNull(record);
@@ -2134,7 +2133,7 @@ namespace Syrx.Commanders.Databases.Integration.Tests
             var collectionA = record.CollectionA;
             NotNull(collectionA);
             True(collectionA.Any());
-            Equal(1, collectionA.Count());
+            Single(collectionA);
 
             // evaluate first result (way too much mission to evaluate all of them). 
             var a1 = collectionA.First();
@@ -2218,7 +2217,7 @@ namespace Syrx.Commanders.Databases.Integration.Tests
             var collectionG = record.CollectionG;
             NotNull(collectionG);
             True(collectionG.Any());
-            Equal(1, collectionG.Count());
+            Single(collectionG);
 
             // evaluate first result (way too much mission to evaluate all of them). 
             var g1 = collectionG.First();
@@ -2229,9 +2228,9 @@ namespace Syrx.Commanders.Databases.Integration.Tests
         }
 
         [Fact]
-        public async Task MultipleSixteenTypesWithNoParameters()
+        public void MultipleSixteenTypesWithNoParameters()
         {
-            var result = await _commander.QueryAsync(Map.Query.Multiple.WithSixteenTypes);
+            var result = _commander.Query(Map.Query.Multiple.WithSixteenTypes);
 
             var record = result.First();
             NotNull(record);
@@ -2241,7 +2240,7 @@ namespace Syrx.Commanders.Databases.Integration.Tests
             var collectionA = record.CollectionA;
             NotNull(collectionA);
             True(collectionA.Any());
-            Equal(1, collectionA.Count());
+            Single(collectionA);
 
             // evaluate first result (way too much mission to evaluate all of them). 
             var a1 = collectionA.First();
@@ -2462,9 +2461,9 @@ namespace Syrx.Commanders.Databases.Integration.Tests
         }
 
         [Fact]
-        public async Task MultipleSixteenTypesWithParameters()
+        public void MultipleSixteenTypesWithParameters()
         {
-            var result = await _commander.QueryAsync(Map.Query.Multiple.WithSixteenTypes, new {Id = 136});
+            var result = _commander.Query(Map.Query.Multiple.WithSixteenTypes, new {Id = 136});
 
 
             var record = result.First();
@@ -2475,7 +2474,7 @@ namespace Syrx.Commanders.Databases.Integration.Tests
             var collectionA = record.CollectionA;
             NotNull(collectionA);
             True(collectionA.Any());
-            Equal(1, collectionA.Count());
+            Single(collectionA);
 
             // evaluate first result (way too much mission to evaluate all of them). 
             var a1 = collectionA.First();
@@ -2685,7 +2684,7 @@ namespace Syrx.Commanders.Databases.Integration.Tests
             var collectionP = record.CollectionP;
             NotNull(collectionP);
             True(collectionP.Any());
-            Equal(1, collectionP.Count());
+            Single(collectionP);
 
             // evaluate first result (way too much mission to evaluate all of them). 
             var p1 = collectionP.First();
@@ -2696,9 +2695,9 @@ namespace Syrx.Commanders.Databases.Integration.Tests
         }
 
         [Fact]
-        public async Task MultipleSixTypesWithNoParameters()
+        public void MultipleSixTypesWithNoParameters()
         {
-            var result = await _commander.QueryAsync(Map.Query.Multiple.WithSixTypes);
+            var result = _commander.Query(Map.Query.Multiple.WithSixTypes);
 
             var record = result.First();
             NotNull(record);
@@ -2708,7 +2707,7 @@ namespace Syrx.Commanders.Databases.Integration.Tests
             var collectionA = record.CollectionA;
             NotNull(collectionA);
             True(collectionA.Any());
-            Equal(1, collectionA.Count());
+            Single(collectionA);
 
             // evaluate first result (way too much mission to evaluate all of them). 
             var a1 = collectionA.First();
@@ -2789,9 +2788,9 @@ namespace Syrx.Commanders.Databases.Integration.Tests
         }
 
         [Fact]
-        public async Task MultipleSixTypesWithParameters()
+        public void MultipleSixTypesWithParameters()
         {
-            var result = await _commander.QueryAsync(Map.Query.Multiple.WithSixTypes, new {Id = 21});
+            var result = _commander.Query(Map.Query.Multiple.WithSixTypes, new {Id = 21});
 
             var record = result.First();
             NotNull(record);
@@ -2801,7 +2800,7 @@ namespace Syrx.Commanders.Databases.Integration.Tests
             var collectionA = record.CollectionA;
             NotNull(collectionA);
             True(collectionA.Any());
-            Equal(1, collectionA.Count());
+            Single(collectionA);
 
             // evaluate first result (way too much mission to evaluate all of them). 
             var a1 = collectionA.First();
@@ -2871,7 +2870,7 @@ namespace Syrx.Commanders.Databases.Integration.Tests
             var collectionF = record.CollectionF;
             NotNull(collectionF);
             True(collectionF.Any());
-            Equal(1, collectionF.Count());
+            Single(collectionF);
 
             // evaluate first result (way too much mission to evaluate all of them). 
             var f1 = collectionF.First();
@@ -2882,9 +2881,9 @@ namespace Syrx.Commanders.Databases.Integration.Tests
         }
 
         [Fact]
-        public async Task MultipleTenTypesWithNoParameters()
+        public void MultipleTenTypesWithNoParameters()
         {
-            var result = await _commander.QueryAsync(Map.Query.Multiple.WithTenTypes);
+            var result = _commander.Query(Map.Query.Multiple.WithTenTypes);
 
             var record = result.First();
             NotNull(record);
@@ -2894,7 +2893,7 @@ namespace Syrx.Commanders.Databases.Integration.Tests
             var collectionA = record.CollectionA;
             NotNull(collectionA);
             True(collectionA.Any());
-            Equal(1, collectionA.Count());
+            Single(collectionA);
 
             // evaluate first result (way too much mission to evaluate all of them). 
             var a1 = collectionA.First();
@@ -3031,9 +3030,9 @@ namespace Syrx.Commanders.Databases.Integration.Tests
         }
 
         [Fact]
-        public async Task MultipleTenTypesWithParameters()
+        public void MultipleTenTypesWithParameters()
         {
-            var result = await _commander.QueryAsync(Map.Query.Multiple.WithTenTypes, new {Id = 55});
+            var result = _commander.Query(Map.Query.Multiple.WithTenTypes, new {Id = 55});
 
             var record = result.First();
             NotNull(record);
@@ -3043,7 +3042,7 @@ namespace Syrx.Commanders.Databases.Integration.Tests
             var collectionA = record.CollectionA;
             NotNull(collectionA);
             True(collectionA.Any());
-            Equal(1, collectionA.Count());
+            Single(collectionA);
 
             // evaluate first result (way too much mission to evaluate all of them). 
             var a1 = collectionA.First();
@@ -3169,7 +3168,7 @@ namespace Syrx.Commanders.Databases.Integration.Tests
             var collectionJ = record.CollectionJ;
             NotNull(collectionJ);
             True(collectionJ.Any());
-            Equal(1, collectionJ.Count());
+            Single(collectionJ);
 
             // evaluate first result (way too much mission to evaluate all of them). 
             var j1 = collectionJ.First();
@@ -3180,9 +3179,9 @@ namespace Syrx.Commanders.Databases.Integration.Tests
         }
 
         [Fact]
-        public async Task MultipleThirteenTypesWithNoParameters()
+        public void MultipleThirteenTypesWithNoParameters()
         {
-            var result = await _commander.QueryAsync(Map.Query.Multiple.WithThirteenTypes);
+            var result = _commander.Query(Map.Query.Multiple.WithThirteenTypes);
 
             var record = result.First();
             NotNull(record);
@@ -3192,7 +3191,7 @@ namespace Syrx.Commanders.Databases.Integration.Tests
             var collectionA = record.CollectionA;
             NotNull(collectionA);
             True(collectionA.Any());
-            Equal(1, collectionA.Count());
+            Single(collectionA);
 
             // evaluate first result (way too much mission to evaluate all of them). 
             var a1 = collectionA.First();
@@ -3371,9 +3370,9 @@ namespace Syrx.Commanders.Databases.Integration.Tests
         }
 
         [Fact]
-        public async Task MultipleThirteenTypesWithParameters()
+        public void MultipleThirteenTypesWithParameters()
         {
-            var result = await _commander.QueryAsync(Map.Query.Multiple.WithThirteenTypes, new {Id = 91});
+            var result = _commander.Query(Map.Query.Multiple.WithThirteenTypes, new {Id = 91});
 
             var record = result.First();
             NotNull(record);
@@ -3383,7 +3382,7 @@ namespace Syrx.Commanders.Databases.Integration.Tests
             var collectionA = record.CollectionA;
             NotNull(collectionA);
             True(collectionA.Any());
-            Equal(1, collectionA.Count());
+            Single(collectionA);
 
             // evaluate first result (way too much mission to evaluate all of them). 
             var a1 = collectionA.First();
@@ -3551,7 +3550,7 @@ namespace Syrx.Commanders.Databases.Integration.Tests
             var collectionM = record.CollectionM;
             NotNull(collectionM);
             True(collectionM.Any());
-            Equal(1, collectionM.Count());
+            Single(collectionM);
 
             // evaluate first result (way too much mission to evaluate all of them). 
             var m1 = collectionM.First();
@@ -3562,9 +3561,9 @@ namespace Syrx.Commanders.Databases.Integration.Tests
         }
 
         [Fact]
-        public async Task MultipleThreeTypesWithNoParameters()
+        public void MultipleThreeTypesWithNoParameters()
         {
-            var result = await _commander.QueryAsync(Map.Query.Multiple.WithThreeTypes);
+            var result = _commander.Query(Map.Query.Multiple.WithThreeTypes);
 
             var record = result.First();
             NotNull(record);
@@ -3574,7 +3573,7 @@ namespace Syrx.Commanders.Databases.Integration.Tests
             var collectionA = record.CollectionA;
             NotNull(collectionA);
             True(collectionA.Any());
-            Equal(1, collectionA.Count());
+            Single(collectionA);
 
             // evaluate first result (way too much mission to evaluate all of them). 
             var a1 = collectionA.First();
@@ -3613,9 +3612,9 @@ namespace Syrx.Commanders.Databases.Integration.Tests
         }
 
         [Fact]
-        public async Task MultipleThreeTypesWithParameters()
+        public void MultipleThreeTypesWithParameters()
         {
-            var result = await _commander.QueryAsync(Map.Query.Multiple.WithThreeTypes, new {Id = 6});
+            var result = _commander.Query(Map.Query.Multiple.WithThreeTypes, new {Id = 6});
 
             var record = result.First();
             NotNull(record);
@@ -3625,7 +3624,7 @@ namespace Syrx.Commanders.Databases.Integration.Tests
             var collectionA = record.CollectionA;
             NotNull(collectionA);
             True(collectionA.Any());
-            Equal(1, collectionA.Count());
+            Single(collectionA);
 
             // evaluate first result (way too much mission to evaluate all of them). 
             var a1 = collectionA.First();
@@ -3664,9 +3663,9 @@ namespace Syrx.Commanders.Databases.Integration.Tests
         }
 
         [Fact]
-        public async Task MultipleTwelveTypesWithNoParameters()
+        public void MultipleTwelveTypesWithNoParameters()
         {
-            var result = await _commander.QueryAsync(Map.Query.Multiple.WithTwelveTypes);
+            var result = _commander.Query(Map.Query.Multiple.WithTwelveTypes);
 
             var record = result.First();
             NotNull(record);
@@ -3676,7 +3675,7 @@ namespace Syrx.Commanders.Databases.Integration.Tests
             var collectionA = record.CollectionA;
             NotNull(collectionA);
             True(collectionA.Any());
-            Equal(1, collectionA.Count());
+            Single(collectionA);
 
             // evaluate first result (way too much mission to evaluate all of them). 
             var a1 = collectionA.First();
@@ -3841,9 +3840,9 @@ namespace Syrx.Commanders.Databases.Integration.Tests
         }
 
         [Fact]
-        public async Task MultipleTwelveTypesWithParameters()
+        public void MultipleTwelveTypesWithParameters()
         {
-            var result = await _commander.QueryAsync(Map.Query.Multiple.WithTwelveTypes, new {Id = 78});
+            var result = _commander.Query(Map.Query.Multiple.WithTwelveTypes, new {Id = 78});
 
             var record = result.First();
             NotNull(record);
@@ -3853,7 +3852,7 @@ namespace Syrx.Commanders.Databases.Integration.Tests
             var collectionA = record.CollectionA;
             NotNull(collectionA);
             True(collectionA.Any());
-            Equal(1, collectionA.Count());
+            Single(collectionA);
 
             // evaluate first result (way too much mission to evaluate all of them). 
             var a1 = collectionA.First();
@@ -4007,7 +4006,7 @@ namespace Syrx.Commanders.Databases.Integration.Tests
             var collectionL = record.CollectionL;
             NotNull(collectionL);
             True(collectionL.Any());
-            Equal(1, collectionL.Count());
+            Single(collectionL);
 
             // evaluate first result (way too much mission to evaluate all of them). 
             var l1 = collectionL.First();
@@ -4018,9 +4017,9 @@ namespace Syrx.Commanders.Databases.Integration.Tests
         }
 
         [Fact]
-        public async Task MultipleTwoTypesWithNoParameters()
+        public void MultipleTwoTypesWithNoParameters()
         {
-            var result = await _commander.QueryAsync(Map.Query.Multiple.WithTwoTypes);
+            var result = _commander.Query(Map.Query.Multiple.WithTwoTypes);
 
             var record = result.First();
             NotNull(record);
@@ -4030,7 +4029,7 @@ namespace Syrx.Commanders.Databases.Integration.Tests
             var collectionA = record.CollectionA;
             NotNull(collectionA);
             True(collectionA.Any());
-            Equal(1, collectionA.Count());
+            Single(collectionA);
 
             // evaluate first result (way too much mission to evaluate all of them). 
             var a1 = collectionA.First();
