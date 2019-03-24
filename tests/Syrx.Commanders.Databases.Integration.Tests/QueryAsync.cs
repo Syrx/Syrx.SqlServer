@@ -48,7 +48,7 @@ namespace Syrx.Commanders.Databases.Integration.Tests
             var result = await _commander.QueryAsync<PocoA>(new {Id = 3});
             NotNull(result);
             True(result.Any());
-            Equal(1, result.Count());
+            Single(result);
 
             // check values 
             var first = result.First();

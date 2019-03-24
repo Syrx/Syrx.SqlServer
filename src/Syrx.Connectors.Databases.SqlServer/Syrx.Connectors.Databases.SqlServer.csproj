@@ -8,6 +8,7 @@
     <Company />
     <Description>Syrx connector specifically for connecting to SQL Server using the System.Data.SqlClient Client Factory.</Description>
     <PackageLicenseUrl>https://github.com/Syrx</PackageLicenseUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/Syrx</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Syrx</RepositoryUrl>
     <PackageReleaseNotes>• Updated dependency</PackageReleaseNotes>

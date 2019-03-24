@@ -67,7 +67,7 @@ namespace Syrx.Commanders.Databases.Integration.Tests
             NotNull(result);
             IsAssignableFrom<IEnumerable<MultiMapPocoD>>(result);
             True(result.Any());
-            Equal(1, result.Count());
+            Single(result);
 
             // first record
             var first = result.First();
@@ -143,7 +143,7 @@ namespace Syrx.Commanders.Databases.Integration.Tests
             NotNull(result);
             IsAssignableFrom<IEnumerable<MultiMapPocoC>>(result);
             True(result.Any());
-            Equal(1, result.Count());
+            Single(result);
 
             // first record
             var first = result.First();
@@ -231,7 +231,7 @@ namespace Syrx.Commanders.Databases.Integration.Tests
             NotNull(result);
             IsAssignableFrom<IEnumerable<MultiMapPocoF>>(result);
             True(result.Any());
-            Equal(1, result.Count());
+            Single(result);
 
             // first record
             var first = result.First();
@@ -331,7 +331,7 @@ namespace Syrx.Commanders.Databases.Integration.Tests
             NotNull(result);
             IsAssignableFrom<IEnumerable<MultiMapPocoE>>(result);
             True(result.Any());
-            Equal(1, result.Count());
+            Single(result);
 
             // first record
             var first = result.First();
@@ -407,7 +407,7 @@ namespace Syrx.Commanders.Databases.Integration.Tests
             NotNull(result);
             IsAssignableFrom<IEnumerable<MultiMapPocoB>>(result);
             True(result.Any());
-            Equal(1, result.Count());
+            Single(result);
 
             // first record
             var first = result.First();
@@ -459,7 +459,7 @@ namespace Syrx.Commanders.Databases.Integration.Tests
             NotNull(result);
             IsAssignableFrom<IEnumerable<MultiMapPocoA>>(result);
             True(result.Any());
-            Equal(1, result.Count());
+            Single(result);
 
             // first record
             var first = result.First();

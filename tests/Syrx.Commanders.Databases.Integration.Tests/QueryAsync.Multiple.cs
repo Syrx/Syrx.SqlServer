@@ -30,7 +30,7 @@ namespace Syrx.Commanders.Databases.Integration.Tests
             var collectionA = record.CollectionA;
             NotNull(collectionA);
             True(collectionA.Any());
-            Equal(1, collectionA.Count());
+            Single(collectionA);
 
             // evaluate first result (way too much mission to evaluate all of them). 
             var a1 = collectionA.First();
@@ -151,7 +151,7 @@ namespace Syrx.Commanders.Databases.Integration.Tests
             var collectionA = record.CollectionA;
             NotNull(collectionA);
             True(collectionA.Any());
-            Equal(1, collectionA.Count());
+            Single(collectionA);
 
             // evaluate first result (way too much mission to evaluate all of them). 
             var a1 = collectionA.First();
@@ -249,7 +249,7 @@ namespace Syrx.Commanders.Databases.Integration.Tests
             var collectionH = record.CollectionH;
             NotNull(collectionH);
             True(collectionH.Any());
-            Equal(1, collectionH.Count());
+            Single(collectionH);
 
             // evaluate first result (way too much mission to evaluate all of them). 
             var h1 = collectionH.First();
@@ -272,7 +272,7 @@ namespace Syrx.Commanders.Databases.Integration.Tests
             var collectionA = record.CollectionA;
             NotNull(collectionA);
             True(collectionA.Any());
-            Equal(1, collectionA.Count());
+            Single(collectionA);
 
             // evaluate first result (way too much mission to evaluate all of them). 
             var a1 = collectionA.First();
@@ -435,7 +435,7 @@ namespace Syrx.Commanders.Databases.Integration.Tests
             var collectionA = record.CollectionA;
             NotNull(collectionA);
             True(collectionA.Any());
-            Equal(1, collectionA.Count());
+            Single(collectionA);
 
             // evaluate first result (way too much mission to evaluate all of them). 
             var a1 = collectionA.First();
@@ -575,7 +575,7 @@ namespace Syrx.Commanders.Databases.Integration.Tests
             var collectionK = record.CollectionK;
             NotNull(collectionK);
             True(collectionK.Any());
-            Equal(1, collectionK.Count());
+            Single(collectionK);
 
             // evaluate first result (way too much mission to evaluate all of them). 
             var k1 = collectionK.First();
@@ -598,7 +598,7 @@ namespace Syrx.Commanders.Databases.Integration.Tests
             var collectionA = record.CollectionA;
             NotNull(collectionA);
             True(collectionA.Any());
-            Equal(1, collectionA.Count());
+            Single(collectionA);
 
             // evaluate first result (way too much mission to evaluate all of them). 
             var a1 = collectionA.First();
@@ -817,7 +817,7 @@ namespace Syrx.Commanders.Databases.Integration.Tests
             var collectionA = record.CollectionA;
             NotNull(collectionA);
             True(collectionA.Any());
-            Equal(1, collectionA.Count());
+            Single(collectionA);
 
             // evaluate first result (way too much mission to evaluate all of them). 
             var a1 = collectionA.First();
@@ -1013,7 +1013,7 @@ namespace Syrx.Commanders.Databases.Integration.Tests
             var collectionO = record.CollectionO;
             NotNull(collectionO);
             True(collectionO.Any());
-            Equal(1, collectionO.Count());
+            Single(collectionO);
 
             // evaluate first result (way too much mission to evaluate all of them). 
             var o1 = collectionO.First();
@@ -1036,7 +1036,7 @@ namespace Syrx.Commanders.Databases.Integration.Tests
             var collectionA = record.CollectionA;
             NotNull(collectionA);
             True(collectionA.Any());
-            Equal(1, collectionA.Count());
+            Single(collectionA);
 
             // evaluate first result (way too much mission to evaluate all of them). 
             var a1 = collectionA.First();
@@ -1115,7 +1115,7 @@ namespace Syrx.Commanders.Databases.Integration.Tests
             var collectionA = record.CollectionA;
             NotNull(collectionA);
             True(collectionA.Any());
-            Equal(1, collectionA.Count());
+            Single(collectionA);
 
             // evaluate first result (way too much mission to evaluate all of them). 
             var a1 = collectionA.First();
@@ -1171,7 +1171,7 @@ namespace Syrx.Commanders.Databases.Integration.Tests
             var collectionE = record.CollectionE;
             NotNull(collectionE);
             True(collectionE.Any());
-            Equal(1, collectionE.Count());
+            Single(collectionE);
 
             // evaluate first result (way too much mission to evaluate all of them). 
             var e1 = collectionE.First();
@@ -1194,7 +1194,7 @@ namespace Syrx.Commanders.Databases.Integration.Tests
             var collectionA = record.CollectionA;
             NotNull(collectionA);
             True(collectionA.Any());
-            Equal(1, collectionA.Count());
+            Single(collectionA);
 
             // evaluate first result (way too much mission to evaluate all of them). 
             var a1 = collectionA.First();
@@ -1399,7 +1399,7 @@ namespace Syrx.Commanders.Databases.Integration.Tests
             var collectionA = record.CollectionA;
             NotNull(collectionA);
             True(collectionA.Any());
-            Equal(1, collectionA.Count());
+            Single(collectionA);
 
             // evaluate first result (way too much mission to evaluate all of them). 
             var a1 = collectionA.First();
@@ -1581,7 +1581,7 @@ namespace Syrx.Commanders.Databases.Integration.Tests
             var collectionN = record.CollectionN;
             NotNull(collectionN);
             True(collectionN.Any());
-            Equal(1, collectionN.Count());
+            Single(collectionN);
 
             // evaluate first result (way too much mission to evaluate all of them). 
             var n1 = collectionN.First();
@@ -1604,7 +1604,7 @@ namespace Syrx.Commanders.Databases.Integration.Tests
             var collectionA = record.CollectionA;
             NotNull(collectionA);
             True(collectionA.Any());
-            Equal(1, collectionA.Count());
+            Single(collectionA);
 
             // evaluate first result (way too much mission to evaluate all of them). 
             var a1 = collectionA.First();
@@ -1669,7 +1669,7 @@ namespace Syrx.Commanders.Databases.Integration.Tests
             var collectionA = record.CollectionA;
             NotNull(collectionA);
             True(collectionA.Any());
-            Equal(1, collectionA.Count());
+            Single(collectionA);
 
             // evaluate first result (way too much mission to evaluate all of them). 
             var a1 = collectionA.First();
@@ -1711,7 +1711,7 @@ namespace Syrx.Commanders.Databases.Integration.Tests
             var collectionD = record.CollectionD;
             NotNull(collectionD);
             True(collectionD.Any());
-            Equal(1, collectionD.Count());
+            Single(collectionD);
 
             // evaluate first result (way too much mission to evaluate all of them). 
             var d1 = collectionD.First();
@@ -1734,7 +1734,7 @@ namespace Syrx.Commanders.Databases.Integration.Tests
             var collectionA = record.CollectionA;
             NotNull(collectionA);
             True(collectionA.Any());
-            Equal(1, collectionA.Count());
+            Single(collectionA);
 
             // evaluate first result (way too much mission to evaluate all of them). 
             var a1 = collectionA.First();
@@ -1869,7 +1869,7 @@ namespace Syrx.Commanders.Databases.Integration.Tests
             var collectionA = record.CollectionA;
             NotNull(collectionA);
             True(collectionA.Any());
-            Equal(1, collectionA.Count());
+            Single(collectionA);
 
             // evaluate first result (way too much mission to evaluate all of them). 
             var a1 = collectionA.First();
@@ -1981,7 +1981,7 @@ namespace Syrx.Commanders.Databases.Integration.Tests
             var collectionI = record.CollectionI;
             NotNull(collectionI);
             True(collectionI.Any());
-            Equal(1, collectionI.Count());
+            Single(collectionI);
 
             // evaluate first result (way too much mission to evaluate all of them). 
             var i1 = collectionI.First();
@@ -2004,7 +2004,7 @@ namespace Syrx.Commanders.Databases.Integration.Tests
             var collectionA = record.CollectionA;
             NotNull(collectionA);
             True(collectionA.Any());
-            Equal(1, collectionA.Count());
+            Single(collectionA);
 
             // evaluate first result (way too much mission to evaluate all of them). 
             var a1 = collectionA.First();
@@ -2027,7 +2027,7 @@ namespace Syrx.Commanders.Databases.Integration.Tests
             var collectionA = record.CollectionA;
             NotNull(collectionA);
             True(collectionA.Any());
-            Equal(1, collectionA.Count());
+            Single(collectionA);
 
             // evaluate first result (way too much mission to evaluate all of them). 
             var a1 = collectionA.First();
@@ -2134,7 +2134,7 @@ namespace Syrx.Commanders.Databases.Integration.Tests
             var collectionA = record.CollectionA;
             NotNull(collectionA);
             True(collectionA.Any());
-            Equal(1, collectionA.Count());
+            Single(collectionA);
 
             // evaluate first result (way too much mission to evaluate all of them). 
             var a1 = collectionA.First();
@@ -2218,7 +2218,7 @@ namespace Syrx.Commanders.Databases.Integration.Tests
             var collectionG = record.CollectionG;
             NotNull(collectionG);
             True(collectionG.Any());
-            Equal(1, collectionG.Count());
+            Single(collectionG);
 
             // evaluate first result (way too much mission to evaluate all of them). 
             var g1 = collectionG.First();
@@ -2241,7 +2241,7 @@ namespace Syrx.Commanders.Databases.Integration.Tests
             var collectionA = record.CollectionA;
             NotNull(collectionA);
             True(collectionA.Any());
-            Equal(1, collectionA.Count());
+            Single(collectionA);
 
             // evaluate first result (way too much mission to evaluate all of them). 
             var a1 = collectionA.First();
@@ -2475,7 +2475,7 @@ namespace Syrx.Commanders.Databases.Integration.Tests
             var collectionA = record.CollectionA;
             NotNull(collectionA);
             True(collectionA.Any());
-            Equal(1, collectionA.Count());
+            Single(collectionA);
 
             // evaluate first result (way too much mission to evaluate all of them). 
             var a1 = collectionA.First();
@@ -2685,7 +2685,7 @@ namespace Syrx.Commanders.Databases.Integration.Tests
             var collectionP = record.CollectionP;
             NotNull(collectionP);
             True(collectionP.Any());
-            Equal(1, collectionP.Count());
+            Single(collectionP);
 
             // evaluate first result (way too much mission to evaluate all of them). 
             var p1 = collectionP.First();
@@ -2708,7 +2708,7 @@ namespace Syrx.Commanders.Databases.Integration.Tests
             var collectionA = record.CollectionA;
             NotNull(collectionA);
             True(collectionA.Any());
-            Equal(1, collectionA.Count());
+            Single(collectionA);
 
             // evaluate first result (way too much mission to evaluate all of them). 
             var a1 = collectionA.First();
@@ -2801,7 +2801,7 @@ namespace Syrx.Commanders.Databases.Integration.Tests
             var collectionA = record.CollectionA;
             NotNull(collectionA);
             True(collectionA.Any());
-            Equal(1, collectionA.Count());
+            Single(collectionA);
 
             // evaluate first result (way too much mission to evaluate all of them). 
             var a1 = collectionA.First();
@@ -2871,7 +2871,7 @@ namespace Syrx.Commanders.Databases.Integration.Tests
             var collectionF = record.CollectionF;
             NotNull(collectionF);
             True(collectionF.Any());
-            Equal(1, collectionF.Count());
+            Single(collectionF);
 
             // evaluate first result (way too much mission to evaluate all of them). 
             var f1 = collectionF.First();
@@ -2894,7 +2894,7 @@ namespace Syrx.Commanders.Databases.Integration.Tests
             var collectionA = record.CollectionA;
             NotNull(collectionA);
             True(collectionA.Any());
-            Equal(1, collectionA.Count());
+            Single(collectionA);
 
             // evaluate first result (way too much mission to evaluate all of them). 
             var a1 = collectionA.First();
@@ -3043,7 +3043,7 @@ namespace Syrx.Commanders.Databases.Integration.Tests
             var collectionA = record.CollectionA;
             NotNull(collectionA);
             True(collectionA.Any());
-            Equal(1, collectionA.Count());
+            Single(collectionA);
 
             // evaluate first result (way too much mission to evaluate all of them). 
             var a1 = collectionA.First();
@@ -3169,7 +3169,7 @@ namespace Syrx.Commanders.Databases.Integration.Tests
             var collectionJ = record.CollectionJ;
             NotNull(collectionJ);
             True(collectionJ.Any());
-            Equal(1, collectionJ.Count());
+            Single(collectionJ);
 
             // evaluate first result (way too much mission to evaluate all of them). 
             var j1 = collectionJ.First();
@@ -3192,7 +3192,7 @@ namespace Syrx.Commanders.Databases.Integration.Tests
             var collectionA = record.CollectionA;
             NotNull(collectionA);
             True(collectionA.Any());
-            Equal(1, collectionA.Count());
+            Single(collectionA);
 
             // evaluate first result (way too much mission to evaluate all of them). 
             var a1 = collectionA.First();
@@ -3383,7 +3383,7 @@ namespace Syrx.Commanders.Databases.Integration.Tests
             var collectionA = record.CollectionA;
             NotNull(collectionA);
             True(collectionA.Any());
-            Equal(1, collectionA.Count());
+            Single(collectionA);
 
             // evaluate first result (way too much mission to evaluate all of them). 
             var a1 = collectionA.First();
@@ -3551,7 +3551,7 @@ namespace Syrx.Commanders.Databases.Integration.Tests
             var collectionM = record.CollectionM;
             NotNull(collectionM);
             True(collectionM.Any());
-            Equal(1, collectionM.Count());
+            Single(collectionM);
 
             // evaluate first result (way too much mission to evaluate all of them). 
             var m1 = collectionM.First();
@@ -3574,7 +3574,7 @@ namespace Syrx.Commanders.Databases.Integration.Tests
             var collectionA = record.CollectionA;
             NotNull(collectionA);
             True(collectionA.Any());
-            Equal(1, collectionA.Count());
+            Single(collectionA);
 
             // evaluate first result (way too much mission to evaluate all of them). 
             var a1 = collectionA.First();
@@ -3625,7 +3625,7 @@ namespace Syrx.Commanders.Databases.Integration.Tests
             var collectionA = record.CollectionA;
             NotNull(collectionA);
             True(collectionA.Any());
-            Equal(1, collectionA.Count());
+            Single(collectionA);
 
             // evaluate first result (way too much mission to evaluate all of them). 
             var a1 = collectionA.First();
@@ -3676,7 +3676,7 @@ namespace Syrx.Commanders.Databases.Integration.Tests
             var collectionA = record.CollectionA;
             NotNull(collectionA);
             True(collectionA.Any());
-            Equal(1, collectionA.Count());
+            Single(collectionA);
 
             // evaluate first result (way too much mission to evaluate all of them). 
             var a1 = collectionA.First();
@@ -3853,7 +3853,7 @@ namespace Syrx.Commanders.Databases.Integration.Tests
             var collectionA = record.CollectionA;
             NotNull(collectionA);
             True(collectionA.Any());
-            Equal(1, collectionA.Count());
+            Single(collectionA);
 
             // evaluate first result (way too much mission to evaluate all of them). 
             var a1 = collectionA.First();
@@ -4007,7 +4007,7 @@ namespace Syrx.Commanders.Databases.Integration.Tests
             var collectionL = record.CollectionL;
             NotNull(collectionL);
             True(collectionL.Any());
-            Equal(1, collectionL.Count());
+            Single(collectionL);
 
             // evaluate first result (way too much mission to evaluate all of them). 
             var l1 = collectionL.First();
@@ -4030,7 +4030,7 @@ namespace Syrx.Commanders.Databases.Integration.Tests
             var collectionA = record.CollectionA;
             NotNull(collectionA);
             True(collectionA.Any());
-            Equal(1, collectionA.Count());
+            Single(collectionA);
 
             // evaluate first result (way too much mission to evaluate all of them). 
             var a1 = collectionA.First();
