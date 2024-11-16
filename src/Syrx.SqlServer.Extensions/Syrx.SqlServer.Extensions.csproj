@@ -11,11 +11,8 @@
 		<PackageProjectUrl>https://github.com/Syrx/</PackageProjectUrl>
 		<PackageIconUrl></PackageIconUrl>
 		<RepositoryUrl>https://github.com/Syrx/</RepositoryUrl>
-		<Description>This package provides Syrx support for SQL Server databases.</Description>
-		<PackageReleaseNotes>
-			Updated to .NET8.0.
-			Try using the new Syrx.SqlServer.Extensions to simplify wiring up and configuration!
-		</PackageReleaseNotes>
+		<Description>This package hosts extension methods to make wiring up support for SQL Server databases simpler and easier. </Description>
+		<PackageReleaseNotes></PackageReleaseNotes>
 		<PackageTags>syrx;data access;orm;micro-orm;sql;sql-server</PackageTags>
 	</PropertyGroup>
 
@@ -28,15 +25,16 @@
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
 		</PackageReference>
-		<PackageReference Include="Syrx.Commanders.Databases" Version="2.1.0" />
 	</ItemGroup>
 
 	<PropertyGroup>
 		<EnablePackageValidation>true</EnablePackageValidation>
 	</PropertyGroup>
 
+
 	<ItemGroup>
-		<ProjectReference Include="..\Syrx.Commanders.Databases.Connectors.SqlServer\Syrx.Commanders.Databases.Connectors.SqlServer.csproj" />
+		<ProjectReference Include="..\Syrx.Commanders.Databases.Connectors.SqlServer.Extensions\Syrx.Commanders.Databases.Connectors.SqlServer.Extensions.csproj" />
+		<ProjectReference Include="..\Syrx.SqlServer\Syrx.SqlServer.csproj" />
 	</ItemGroup>
 
 </Project>
