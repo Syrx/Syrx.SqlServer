@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<Description>This package hosts extension methods to make wiring up support for SQL Server databases simpler and easier. </Description>
+		<PackageTags>syrx;data access;orm;micro-orm;sql;sql-server</PackageTags>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Syrx.Commanders.Databases.Connectors.SqlServer.Extensions\Syrx.Commanders.Databases.Connectors.SqlServer.Extensions.csproj" />
+		<ProjectReference Include="..\Syrx.SqlServer\Syrx.SqlServer.csproj" />
+	</ItemGroup>
+
+</Project>

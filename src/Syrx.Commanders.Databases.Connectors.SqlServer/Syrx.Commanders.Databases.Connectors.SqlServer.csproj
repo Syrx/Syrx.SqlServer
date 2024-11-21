@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<Description>This package provides support for SQL Server connections by implementing a SqlServerDatabaseConnector for the Syrx IDatabaseConnector. </Description>
+		<PackageReleaseNotes>
+			BREAKING CHANGE: Changed namespace.
+			Updated to .NET8.0.
+		</PackageReleaseNotes>
+		<PackageTags>syrx;data access;orm;micro-orm;sql;sql-server</PackageTags>
+	</PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="Microsoft.Data.SqlClient" Version="5.2.2" />
+		<PackageReference Include="Syrx.Commanders.Databases.Connectors" Version="2.1.0" />
+	</ItemGroup>
+
+</Project>

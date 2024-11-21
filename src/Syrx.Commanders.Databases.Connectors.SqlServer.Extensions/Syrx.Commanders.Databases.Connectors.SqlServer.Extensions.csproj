@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<Description>This package host extension methods to simplify the wiring up and dependency injection of SQL Server support using the IServiceCollection. </Description>
+		<PackageTags>syrx;data access;orm;micro-orm;sql;sql-server</PackageTags>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.0" />
+		<PackageReference Include="Syrx.Commanders.Databases.Extensions" Version="2.1.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Syrx.Commanders.Databases.Connectors.SqlServer\Syrx.Commanders.Databases.Connectors.SqlServer.csproj" />
+	</ItemGroup>
+
+</Project>
