@@ -1,28 +1,18 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<Description>This package provides Syrx support for SQL Server databases.</Description>
+		<PackageReleaseNotes>
+			Updated to .NET8.0.
+			Try using the new Syrx.SqlServer.Extensions to simplify wiring up and configuration!
+		</PackageReleaseNotes>
+		<PackageTags>syrx;data access;orm;micro-orm;sql;sql-server</PackageTags>
+	</PropertyGroup>
+	<ItemGroup>
+	  <PackageReference Include="Syrx.Commanders.Databases" Version="2.*" />
+	</ItemGroup>
 
-  <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>1.4.0</Version>
-    <Description>Package built specifically for SQL Server, contains all the necessary package references for simplified installation.</Description>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageProjectUrl>https://github.com/Syrx</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/Syrx</RepositoryUrl>
-    <PackageReleaseNotes>• Updated dependency</PackageReleaseNotes>
-    <Authors>@sextondjc</Authors>
-    <Company />
-    <Copyright>https://github.com/Syrx</Copyright>
-  </PropertyGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Syrx" Version="1.*" />
-    <PackageReference Include="Syrx.Commanders.Databases" Version="1.*" />
-    <PackageReference Include="Syrx.Readers.Databases" Version="1.*" />
-    <PackageReference Include="Syrx.Settings.Databases" Version="1.*" />    
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\Syrx.Connectors.Databases.SqlServer\Syrx.Connectors.Databases.SqlServer.csproj" />
-  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\Syrx.Commanders.Databases.Connectors.SqlServer\Syrx.Commanders.Databases.Connectors.SqlServer.csproj" />
+	</ItemGroup>
 
 </Project>

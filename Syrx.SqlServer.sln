@@ -1,27 +1,47 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26730.16
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35506.116
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Syrx.Connectors.Databases.SqlServer", "src\Syrx.Connectors.Databases.SqlServer\Syrx.Connectors.Databases.SqlServer.csproj", "{E7C3B7EC-B97D-4DBA-9BF6-1AC10FEF22D4}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{7278E8F6-25BE-4CF3-A56B-AD4652DCF531}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Syrx.Connectors.Databases.SqlServer.Unit.Tests", "tests\Syrx.Connectors.Databases.SqlServer.Unit.Tests\Syrx.Connectors.Databases.SqlServer.Unit.Tests.csproj", "{40CC7F86-F575-4CB2-9D01-08052F70B363}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Syrx.SqlServer", "src\Syrx.SqlServer\Syrx.SqlServer.csproj", "{6CAC7CB5-92CC-416A-A181-1238037F316C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Syrx.SqlServer.Integration.Tests", "tests\Syrx.SqlServer.Integration.Tests\Syrx.SqlServer.Integration.Tests.csproj", "{80203C0A-68D1-4A3D-9138-A08544FAF99E}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Syrx.Tests.Models", "tests\Syrx.Tests.Models\Syrx.Tests.Models.csproj", "{DB53C171-37A7-4E5D-A7BC-FB75492B6BCA}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Syrx.Tests.Common", "tests\Syrx.Tests.Common\Syrx.Tests.Common.csproj", "{47362A6C-AA51-41E0-A9E9-C228176503F7}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Syrx.Commanders.Databases.Integration.Tests", "tests\Syrx.Commanders.Databases.Integration.Tests\Syrx.Commanders.Databases.Integration.Tests.csproj", "{7CFEE633-865F-4DBA-B5FC-0AA9734B0182}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{C1F1486E-D32A-4C74-AA98-EFA8D32A2D28}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".docs", ".docs", "{C1F1486E-D32A-4C74-AA98-EFA8D32A2D28}"
+	ProjectSection(SolutionItems) = preProject
+		license.txt = license.txt
+		.docs\readme.md = .docs\readme.md
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{AAE457A3-C435-4EB9-8D40-59F3F38F67D7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".config", ".config", "{666B6BE9-957B-4480-8FF4-43082F869787}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+		Directory.Build.props = Directory.Build.props
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Syrx.Commanders.Databases.Connectors.SqlServer", "src\Syrx.Commanders.Databases.Connectors.SqlServer\Syrx.Commanders.Databases.Connectors.SqlServer.csproj", "{E6372E32-0C79-44C1-A525-3C86FA2EF2E4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Syrx.Commanders.Databases.Connectors.SqlServer.Extensions", "src\Syrx.Commanders.Databases.Connectors.SqlServer.Extensions\Syrx.Commanders.Databases.Connectors.SqlServer.Extensions.csproj", "{D45405F0-DC81-4F60-B9BE-8FD8653B62C1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Syrx.SqlServer.Extensions", "src\Syrx.SqlServer.Extensions\Syrx.SqlServer.Extensions.csproj", "{BE6902CA-2512-46F8-8E8B-DC3BC7942F6F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "integration", "integration", "{058AF582-4094-490A-A70E-63CB7A80D75F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "unit", "unit", "{9076BD5D-68F5-4698-9545-EF24DCE2A3D1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Syrx.Commanders.Databases.Tests.Integration.Models", "tests\integration\Syrx.Commanders.Databases.Tests.Integration.Models\Syrx.Commanders.Databases.Tests.Integration.Models.csproj", "{62AB6FDF-717D-4A34-B759-61D21F2C8BDC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Syrx.SqlServer.Tests.Integration", "tests\integration\Syrx.SqlServer.Tests.Integration\Syrx.SqlServer.Tests.Integration.csproj", "{B402F822-E0FF-4E24-BA0F-034F9D9F24C4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Syrx.Commanders.Databases.Connectors.SqlServer.Extensions.Tests.Unit", "tests\unit\Syrx.Commanders.Databases.Connectors.SqlServer.Extensions.Tests.Unit\Syrx.Commanders.Databases.Connectors.SqlServer.Extensions.Tests.Unit.csproj", "{76F8217C-564A-4F3B-A5A1-9FDDFE172B49}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Syrx.Commanders.Databases.Connectors.SqlServer.Tests.Unit", "tests\unit\Syrx.Commanders.Databases.Connectors.SqlServer.Tests.Unit\Syrx.Commanders.Databases.Connectors.SqlServer.Tests.Unit.csproj", "{A01AB7BB-3697-46FC-AAE8-715D1490CAFD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Syrx.Tests.Extensions", "tests\unit\Syrx.Tests.Extensions\Syrx.Tests.Extensions.csproj", "{2CAB9D9B-E25C-422C-98F7-A3E5106CA02D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,46 +49,58 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E7C3B7EC-B97D-4DBA-9BF6-1AC10FEF22D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E7C3B7EC-B97D-4DBA-9BF6-1AC10FEF22D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E7C3B7EC-B97D-4DBA-9BF6-1AC10FEF22D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E7C3B7EC-B97D-4DBA-9BF6-1AC10FEF22D4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{40CC7F86-F575-4CB2-9D01-08052F70B363}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{40CC7F86-F575-4CB2-9D01-08052F70B363}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{40CC7F86-F575-4CB2-9D01-08052F70B363}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{40CC7F86-F575-4CB2-9D01-08052F70B363}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6CAC7CB5-92CC-416A-A181-1238037F316C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6CAC7CB5-92CC-416A-A181-1238037F316C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6CAC7CB5-92CC-416A-A181-1238037F316C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6CAC7CB5-92CC-416A-A181-1238037F316C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{80203C0A-68D1-4A3D-9138-A08544FAF99E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{80203C0A-68D1-4A3D-9138-A08544FAF99E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{80203C0A-68D1-4A3D-9138-A08544FAF99E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{80203C0A-68D1-4A3D-9138-A08544FAF99E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DB53C171-37A7-4E5D-A7BC-FB75492B6BCA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DB53C171-37A7-4E5D-A7BC-FB75492B6BCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DB53C171-37A7-4E5D-A7BC-FB75492B6BCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DB53C171-37A7-4E5D-A7BC-FB75492B6BCA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{47362A6C-AA51-41E0-A9E9-C228176503F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{47362A6C-AA51-41E0-A9E9-C228176503F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{47362A6C-AA51-41E0-A9E9-C228176503F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{47362A6C-AA51-41E0-A9E9-C228176503F7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7CFEE633-865F-4DBA-B5FC-0AA9734B0182}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7CFEE633-865F-4DBA-B5FC-0AA9734B0182}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7CFEE633-865F-4DBA-B5FC-0AA9734B0182}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7CFEE633-865F-4DBA-B5FC-0AA9734B0182}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6372E32-0C79-44C1-A525-3C86FA2EF2E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6372E32-0C79-44C1-A525-3C86FA2EF2E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6372E32-0C79-44C1-A525-3C86FA2EF2E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6372E32-0C79-44C1-A525-3C86FA2EF2E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D45405F0-DC81-4F60-B9BE-8FD8653B62C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D45405F0-DC81-4F60-B9BE-8FD8653B62C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D45405F0-DC81-4F60-B9BE-8FD8653B62C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D45405F0-DC81-4F60-B9BE-8FD8653B62C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE6902CA-2512-46F8-8E8B-DC3BC7942F6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE6902CA-2512-46F8-8E8B-DC3BC7942F6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE6902CA-2512-46F8-8E8B-DC3BC7942F6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE6902CA-2512-46F8-8E8B-DC3BC7942F6F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62AB6FDF-717D-4A34-B759-61D21F2C8BDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62AB6FDF-717D-4A34-B759-61D21F2C8BDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62AB6FDF-717D-4A34-B759-61D21F2C8BDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62AB6FDF-717D-4A34-B759-61D21F2C8BDC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B402F822-E0FF-4E24-BA0F-034F9D9F24C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B402F822-E0FF-4E24-BA0F-034F9D9F24C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B402F822-E0FF-4E24-BA0F-034F9D9F24C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B402F822-E0FF-4E24-BA0F-034F9D9F24C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76F8217C-564A-4F3B-A5A1-9FDDFE172B49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76F8217C-564A-4F3B-A5A1-9FDDFE172B49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76F8217C-564A-4F3B-A5A1-9FDDFE172B49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76F8217C-564A-4F3B-A5A1-9FDDFE172B49}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A01AB7BB-3697-46FC-AAE8-715D1490CAFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A01AB7BB-3697-46FC-AAE8-715D1490CAFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A01AB7BB-3697-46FC-AAE8-715D1490CAFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A01AB7BB-3697-46FC-AAE8-715D1490CAFD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2CAB9D9B-E25C-422C-98F7-A3E5106CA02D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CAB9D9B-E25C-422C-98F7-A3E5106CA02D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CAB9D9B-E25C-422C-98F7-A3E5106CA02D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2CAB9D9B-E25C-422C-98F7-A3E5106CA02D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{E7C3B7EC-B97D-4DBA-9BF6-1AC10FEF22D4} = {AAE457A3-C435-4EB9-8D40-59F3F38F67D7}
-		{40CC7F86-F575-4CB2-9D01-08052F70B363} = {7278E8F6-25BE-4CF3-A56B-AD4652DCF531}
 		{6CAC7CB5-92CC-416A-A181-1238037F316C} = {AAE457A3-C435-4EB9-8D40-59F3F38F67D7}
-		{80203C0A-68D1-4A3D-9138-A08544FAF99E} = {7278E8F6-25BE-4CF3-A56B-AD4652DCF531}
-		{DB53C171-37A7-4E5D-A7BC-FB75492B6BCA} = {7278E8F6-25BE-4CF3-A56B-AD4652DCF531}
-		{47362A6C-AA51-41E0-A9E9-C228176503F7} = {7278E8F6-25BE-4CF3-A56B-AD4652DCF531}
-		{7CFEE633-865F-4DBA-B5FC-0AA9734B0182} = {7278E8F6-25BE-4CF3-A56B-AD4652DCF531}
+		{E6372E32-0C79-44C1-A525-3C86FA2EF2E4} = {AAE457A3-C435-4EB9-8D40-59F3F38F67D7}
+		{D45405F0-DC81-4F60-B9BE-8FD8653B62C1} = {AAE457A3-C435-4EB9-8D40-59F3F38F67D7}
+		{BE6902CA-2512-46F8-8E8B-DC3BC7942F6F} = {AAE457A3-C435-4EB9-8D40-59F3F38F67D7}
+		{058AF582-4094-490A-A70E-63CB7A80D75F} = {7278E8F6-25BE-4CF3-A56B-AD4652DCF531}
+		{9076BD5D-68F5-4698-9545-EF24DCE2A3D1} = {7278E8F6-25BE-4CF3-A56B-AD4652DCF531}
+		{62AB6FDF-717D-4A34-B759-61D21F2C8BDC} = {058AF582-4094-490A-A70E-63CB7A80D75F}
+		{B402F822-E0FF-4E24-BA0F-034F9D9F24C4} = {058AF582-4094-490A-A70E-63CB7A80D75F}
+		{76F8217C-564A-4F3B-A5A1-9FDDFE172B49} = {9076BD5D-68F5-4698-9545-EF24DCE2A3D1}
+		{A01AB7BB-3697-46FC-AAE8-715D1490CAFD} = {9076BD5D-68F5-4698-9545-EF24DCE2A3D1}
+		{2CAB9D9B-E25C-422C-98F7-A3E5106CA02D} = {9076BD5D-68F5-4698-9545-EF24DCE2A3D1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5A04028B-2D32-499D-84C4-E12FD1345B49}
