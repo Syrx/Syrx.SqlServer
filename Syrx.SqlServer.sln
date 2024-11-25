@@ -67,6 +67,16 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Syrx.Commanders.Databases.S
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Syrx.Commanders.Databases.Builders", ".submodules\Syrx.Commanders.Databases\src\Syrx.Commanders.Databases.Builders\Syrx.Commanders.Databases.Builders.csproj", "{E5291C89-CC47-45A3-9FA4-A0610CF91F72}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{838DE81D-38F4-4057-B6C0-FCBC7CC35541}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\publish.yml = .github\workflows\publish.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{3D265824-0282-43F0-A43D-D685992DC38F}"
+	ProjectSection(SolutionItems) = preProject
+		.github\dependabot.yml = .github\dependabot.yml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -160,6 +170,8 @@ Global
 		{C57B1DB0-CE97-4024-B78F-C2EBB71F65FE} = {25E202EE-8048-4CF9-BF98-6505D886B87B}
 		{E3EC5C87-561B-4FC7-9B9A-030A578C5FCB} = {25E202EE-8048-4CF9-BF98-6505D886B87B}
 		{E5291C89-CC47-45A3-9FA4-A0610CF91F72} = {25E202EE-8048-4CF9-BF98-6505D886B87B}
+		{838DE81D-38F4-4057-B6C0-FCBC7CC35541} = {3D265824-0282-43F0-A43D-D685992DC38F}
+		{3D265824-0282-43F0-A43D-D685992DC38F} = {666B6BE9-957B-4480-8FF4-43082F869787}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5A04028B-2D32-499D-84C4-E12FD1345B49}
