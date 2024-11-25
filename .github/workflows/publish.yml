@@ -33,7 +33,8 @@ jobs:
       with: 
         submodules: true
         
-    - name: pull & update submodules
+    - uses: actions/checkout@v4
+      name: pull & update submodules
       run: |
         git submodule --init --recursive
         git submodule --recursive --remote
