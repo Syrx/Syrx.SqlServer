@@ -8,7 +8,7 @@
 		<PackageTags>syrx;data access;orm;micro-orm;sql;sql-server</PackageTags>
 	</PropertyGroup>
 	<ItemGroup>
-	  <PackageReference Include="Syrx.Commanders.Databases" Version="2.*" />
+	  <PackageReference Include="Syrx.Commanders.Databases" Version="2.3.0" />
 	</ItemGroup>
 
 	<ItemGroup>

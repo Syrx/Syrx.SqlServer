@@ -6,7 +6,7 @@
 
 	<ItemGroup>
 		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.0" />
-		<PackageReference Include="Syrx.Commanders.Databases.Extensions" Version="2.*" />
+		<PackageReference Include="Syrx.Commanders.Databases.Extensions" Version="2.3.0" />
 	</ItemGroup>
 
 	<ItemGroup>
