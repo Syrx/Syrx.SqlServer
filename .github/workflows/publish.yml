@@ -73,6 +73,9 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Setup .NET
+      with:
+        submodules: recursive
+      
       uses: actions/setup-dotnet@v4
     - name: Run tests
       run: dotnet test --configuration Release
