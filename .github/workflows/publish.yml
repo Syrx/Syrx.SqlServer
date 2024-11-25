@@ -40,7 +40,7 @@ jobs:
         git submodule --recursive --remote
           
     - name: Commit
-       run: |
+      run: |
           git config user.email "actions@github.com"
           git config user.name "GitHub Actions - update submodules"
           git add --all
