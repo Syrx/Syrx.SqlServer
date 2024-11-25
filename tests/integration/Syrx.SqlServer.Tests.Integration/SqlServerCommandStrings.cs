@@ -1,12 +1,7 @@
-﻿namespace Syrx.SqlServer.Tests.Integration
+﻿namespace Syrx.Commanders.Databases.Tests.Integration.DatabaseCommanderTests.SqlServerTests
 {
     public static class SqlServerCommandStrings
     {
-        public const string Alias = "Syrx.Sql";
-        public const string Instance = "Syrx.Sql.Instance";
-        public const string ConnectionString = "Data Source=(LocalDb)\\mssqllocaldb;Initial Catalog=Syrx;Integrated Security=true;";
-        public const string InstanceConnectionString = "Data Source=(LocalDb)\\mssqllocaldb;Initial Catalog=master;Integrated Security=true;";
-
         public static class Setup
         {
             public const string CreateDatabase = @"declare @sql nvarchar(max)
@@ -932,5 +927,6 @@ select @Name
 
             public const string Successfully = @"select cast(rand() * 100 as int);";
         }
+
     }
 }
