@@ -7,11 +7,9 @@
 		</PackageReleaseNotes>
 		<PackageTags>syrx;data access;orm;micro-orm;sql;sql-server</PackageTags>
 	</PropertyGroup>
-	<ItemGroup>
-	  <PackageReference Include="Syrx.Commanders.Databases" Version="2.*" />
-	</ItemGroup>
 
 	<ItemGroup>
+		<ProjectReference Include="..\..\.submodules\Syrx.Commanders.Databases\src\Syrx.Commanders.Databases\Syrx.Commanders.Databases.csproj" />
 		<ProjectReference Include="..\Syrx.Commanders.Databases.Connectors.SqlServer\Syrx.Commanders.Databases.Connectors.SqlServer.csproj" />
 	</ItemGroup>
 
