@@ -77,6 +77,18 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{3D26
 		.github\dependabot.yml = .github\dependabot.yml
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Syrx.Commanders.Databases.Connectors.Extensions", ".submodules\Syrx.Commanders.Databases\src\Syrx.Commanders.Databases.Connectors.Extensions\Syrx.Commanders.Databases.Connectors.Extensions.csproj", "{EBF2F2D7-64A8-4B54-841C-ACEB863A0584}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Syrx.Commanders.Databases.Extensions", ".submodules\Syrx.Commanders.Databases\src\Syrx.Commanders.Databases.Extensions\Syrx.Commanders.Databases.Extensions.csproj", "{DFDBF0FE-E033-4D89-B841-83B371612B7C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Syrx.Commanders.Databases.Settings.Extensions", ".submodules\Syrx.Commanders.Databases\src\Syrx.Commanders.Databases.Settings.Extensions\Syrx.Commanders.Databases.Settings.Extensions.csproj", "{C4D2F473-F3CF-484D-B51F-89C832FE10D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Syrx.Commanders.Databases.Settings.Extensions.Json", ".submodules\Syrx.Commanders.Databases\src\Syrx.Commanders.Databases.Settings.Extensions.Json\Syrx.Commanders.Databases.Settings.Extensions.Json.csproj", "{8DF7A542-99CB-474E-9557-31EEC295962E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Syrx.Commanders.Databases.Settings.Extensions.Xml", ".submodules\Syrx.Commanders.Databases\src\Syrx.Commanders.Databases.Settings.Extensions.Xml\Syrx.Commanders.Databases.Settings.Extensions.Xml.csproj", "{E1DAE0EA-FE51-4789-B88F-1462F7854BEC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Syrx.Commanders.Databases.Settings.Readers.Extensions", ".submodules\Syrx.Commanders.Databases\src\Syrx.Commanders.Databases.Settings.Readers.Extensions\Syrx.Commanders.Databases.Settings.Readers.Extensions.csproj", "{50CFA52E-18EA-4EEE-9FBD-D842E22D59F9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -143,6 +155,30 @@ Global
 		{E5291C89-CC47-45A3-9FA4-A0610CF91F72}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E5291C89-CC47-45A3-9FA4-A0610CF91F72}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E5291C89-CC47-45A3-9FA4-A0610CF91F72}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBF2F2D7-64A8-4B54-841C-ACEB863A0584}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBF2F2D7-64A8-4B54-841C-ACEB863A0584}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBF2F2D7-64A8-4B54-841C-ACEB863A0584}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBF2F2D7-64A8-4B54-841C-ACEB863A0584}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DFDBF0FE-E033-4D89-B841-83B371612B7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFDBF0FE-E033-4D89-B841-83B371612B7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFDBF0FE-E033-4D89-B841-83B371612B7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFDBF0FE-E033-4D89-B841-83B371612B7C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4D2F473-F3CF-484D-B51F-89C832FE10D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4D2F473-F3CF-484D-B51F-89C832FE10D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4D2F473-F3CF-484D-B51F-89C832FE10D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4D2F473-F3CF-484D-B51F-89C832FE10D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8DF7A542-99CB-474E-9557-31EEC295962E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8DF7A542-99CB-474E-9557-31EEC295962E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8DF7A542-99CB-474E-9557-31EEC295962E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8DF7A542-99CB-474E-9557-31EEC295962E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1DAE0EA-FE51-4789-B88F-1462F7854BEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1DAE0EA-FE51-4789-B88F-1462F7854BEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1DAE0EA-FE51-4789-B88F-1462F7854BEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1DAE0EA-FE51-4789-B88F-1462F7854BEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50CFA52E-18EA-4EEE-9FBD-D842E22D59F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50CFA52E-18EA-4EEE-9FBD-D842E22D59F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50CFA52E-18EA-4EEE-9FBD-D842E22D59F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50CFA52E-18EA-4EEE-9FBD-D842E22D59F9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -172,6 +208,12 @@ Global
 		{E5291C89-CC47-45A3-9FA4-A0610CF91F72} = {25E202EE-8048-4CF9-BF98-6505D886B87B}
 		{838DE81D-38F4-4057-B6C0-FCBC7CC35541} = {3D265824-0282-43F0-A43D-D685992DC38F}
 		{3D265824-0282-43F0-A43D-D685992DC38F} = {666B6BE9-957B-4480-8FF4-43082F869787}
+		{EBF2F2D7-64A8-4B54-841C-ACEB863A0584} = {25E202EE-8048-4CF9-BF98-6505D886B87B}
+		{DFDBF0FE-E033-4D89-B841-83B371612B7C} = {25E202EE-8048-4CF9-BF98-6505D886B87B}
+		{C4D2F473-F3CF-484D-B51F-89C832FE10D9} = {25E202EE-8048-4CF9-BF98-6505D886B87B}
+		{8DF7A542-99CB-474E-9557-31EEC295962E} = {25E202EE-8048-4CF9-BF98-6505D886B87B}
+		{E1DAE0EA-FE51-4789-B88F-1462F7854BEC} = {25E202EE-8048-4CF9-BF98-6505D886B87B}
+		{50CFA52E-18EA-4EEE-9FBD-D842E22D59F9} = {25E202EE-8048-4CF9-BF98-6505D886B87B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5A04028B-2D32-499D-84C4-E12FD1345B49}
