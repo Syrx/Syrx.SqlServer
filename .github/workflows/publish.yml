@@ -32,7 +32,10 @@ jobs:
       name: Setup dotnet ${{ matrix.dotnet-version }}
       with:
         submodules: recursive
-          
+
+    - name: Initialize submodules
+      run: git submodule update --init --recursive
+        
     - uses: actions/setup-dotnet@v4
       with:
           dotnet-version: ${{ matrix.dotnet-version }}
