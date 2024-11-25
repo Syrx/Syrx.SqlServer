@@ -76,9 +76,6 @@ jobs:
       with: 
         submodules: recursive
 
-    - name: initialized submodules
-      run: git submodule update --init --recursive
-      
       uses: actions/setup-dotnet@v4
     - name: Run tests
       run: dotnet test --configuration Release
