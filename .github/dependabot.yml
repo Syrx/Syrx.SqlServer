@@ -13,3 +13,8 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
+# adding for submodule sync as per https://stackoverflow.com/a/73229032
+  - package-ecosystem: gitsubmodule
+    schedule:
+        interval: "daily"
+    directory: /

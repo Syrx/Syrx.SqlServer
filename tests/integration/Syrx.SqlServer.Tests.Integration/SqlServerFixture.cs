@@ -1,16 +1,18 @@
 ﻿using Microsoft.Extensions.Logging;
+using Testcontainers.MsSql;
 
-namespace Syrx.SqlServer.Tests.Integration
+namespace Syrx.Commanders.Databases.Tests.Integration.DatabaseCommanderTests.SqlServerTests
 {
-
-    public class BaseFixture : IAsyncLifetime
+    public class SqlServerFixture : Fixture, IAsyncLifetime
     {
-        private IServiceProvider _services;
         private readonly MsSqlContainer _container;
 
-        public BaseFixture()
+        public SqlServerFixture()
         {
-            var _logger = LoggerFactory.Create(b => b.AddConsole().AddSystemdConsole().AddSimpleConsole()).CreateLogger<BaseFixture>();
+            var _logger = LoggerFactory.Create(b => b
+                .AddConsole()
+                .AddSystemdConsole()
+                .AddSimpleConsole()).CreateLogger<SqlServerFixture>();
 
             _container = new MsSqlBuilder()
                 .WithLogger(_logger)
@@ -44,6 +46,7 @@ ConnectionString . : {container.GetConnectionString()}
             // start
             _container.StartAsync().Wait();
         }
+
         public async Task DisposeAsync()
         {
             await Task.Run(() => Console.WriteLine("Done"));
@@ -53,14 +56,20 @@ ConnectionString . : {container.GetConnectionString()}
         {
             // line up
             var connectionString = _container.GetConnectionString();
-            var installer = new SqlServerInstaller(connectionString);
-            _services = installer.Provider;
-            await Task.CompletedTask;
-        }
+            var alias = "Syrx.Sql";
 
-        internal protected ICommander<TRepository> GetCommander<TRepository>()
-        {
-            return _services.GetService<ICommander<TRepository>>()!;
+            var provider = Installer.Install(alias, connectionString);
+
+            // call Install() on the base type. 
+            Install(() => Installer.Install(alias, connectionString));
+            Installer.SetupDatabase(base.ResolveCommander<DatabaseBuilder>());
+
+            // set assertions for Execute message
+            AssertionMessages.Add<Execute>(nameof(Execute.SupportsTransactionRollback),
+                $"Arithmetic overflow error converting expression to data type float.{Environment.NewLine}The statement has been terminated.");
+
+
+            await Task.CompletedTask;
         }
 
     }
