@@ -64,10 +64,11 @@ ConnectionString . : {container.GetConnectionString()}
             Install(() => Installer.Install(alias, connectionString));
             Installer.SetupDatabase(base.ResolveCommander<DatabaseBuilder>());
 
-            // set assertions for Execute message
-            AssertionMessages.Add<Execute>(nameof(Execute.SupportsTransactionRollback),
-                $"Arithmetic overflow error converting expression to data type float.{Environment.NewLine}The statement has been terminated.");
-
+            // set assertion messages for those that change between RDBMS implementations. 
+            AssertionMessages.Add<Execute>(nameof(Execute.SupportsTransactionRollback), $"Arithmetic overflow error converting expression to data type float.{Environment.NewLine}The statement has been terminated.");
+            AssertionMessages.Add<Execute>(nameof(Execute.ExceptionsAreReturnedToCaller), "Divide by zero error encountered.");
+            AssertionMessages.Add<Execute>(nameof(Execute.SupportsRollbackOnParameterlessCalls), "Divide by zero error encountered.");
+            AssertionMessages.Add<Query>(nameof(Query.ExceptionsAreReturnedToCaller), "Divide by zero error encountered.");
 
             await Task.CompletedTask;
         }
