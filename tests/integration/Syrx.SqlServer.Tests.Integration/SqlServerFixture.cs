@@ -68,7 +68,14 @@ ConnectionString . : {container.GetConnectionString()}
             AssertionMessages.Add<Execute>(nameof(Execute.SupportsTransactionRollback), $"Arithmetic overflow error converting expression to data type float.{Environment.NewLine}The statement has been terminated.");
             AssertionMessages.Add<Execute>(nameof(Execute.ExceptionsAreReturnedToCaller), "Divide by zero error encountered.");
             AssertionMessages.Add<Execute>(nameof(Execute.SupportsRollbackOnParameterlessCalls), "Divide by zero error encountered.");
+
+            AssertionMessages.Add<ExecuteAsync>(nameof(ExecuteAsync.SupportsTransactionRollback), $"Arithmetic overflow error converting expression to data type float.{Environment.NewLine}The statement has been terminated.");
+            AssertionMessages.Add<ExecuteAsync>(nameof(ExecuteAsync.ExceptionsAreReturnedToCaller), "Divide by zero error encountered.");
+            AssertionMessages.Add<ExecuteAsync>(nameof(ExecuteAsync.SupportsRollbackOnParameterlessCalls), "Divide by zero error encountered.");
+
+
             AssertionMessages.Add<Query>(nameof(Query.ExceptionsAreReturnedToCaller), "Divide by zero error encountered.");
+            AssertionMessages.Add<QueryAsync>(nameof(QueryAsync.ExceptionsAreReturnedToCaller), "Divide by zero error encountered.");
 
             await Task.CompletedTask;
         }
