@@ -1,4 +1,4 @@
-﻿namespace Syrx.SqlServer.Tests.Integration
+﻿namespace Syrx.Commanders.Databases.Tests.Integration.DatabaseCommanderTests.SqlServerTests
 {
     public class DatabaseBuilder
     {
@@ -108,6 +108,7 @@
 
         public DatabaseBuilder Populate()
         {
+            ClearTable();
             for (var i = 1; i < 151; i++)
             {
                 var entry = new {
