@@ -24,8 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\src\Syrx.Commanders.Databases.Connectors.SqlServer.Extensions\Syrx.Commanders.Databases.Connectors.SqlServer.Extensions.csproj" />
-    <ProjectReference Include="..\Syrx.Tests.Extensions\Syrx.Tests.Extensions.csproj" />
+    <ProjectReference Include="..\..\..\src\Syrx.Commanders.Databases.Connectors.SqlServer.Extensions\Syrx.Commanders.Databases.Connectors.SqlServer.Extensions.csproj" />    
   </ItemGroup>
 
   <ItemGroup>

@@ -33,15 +33,73 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "integration", "integration"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "unit", "unit", "{9076BD5D-68F5-4698-9545-EF24DCE2A3D1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Syrx.Commanders.Databases.Tests.Integration.Models", "tests\integration\Syrx.Commanders.Databases.Tests.Integration.Models\Syrx.Commanders.Databases.Tests.Integration.Models.csproj", "{62AB6FDF-717D-4A34-B759-61D21F2C8BDC}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Syrx.SqlServer.Tests.Integration", "tests\integration\Syrx.SqlServer.Tests.Integration\Syrx.SqlServer.Tests.Integration.csproj", "{B402F822-E0FF-4E24-BA0F-034F9D9F24C4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Syrx.Commanders.Databases.Connectors.SqlServer.Extensions.Tests.Unit", "tests\unit\Syrx.Commanders.Databases.Connectors.SqlServer.Extensions.Tests.Unit\Syrx.Commanders.Databases.Connectors.SqlServer.Extensions.Tests.Unit.csproj", "{76F8217C-564A-4F3B-A5A1-9FDDFE172B49}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Syrx.Commanders.Databases.Connectors.SqlServer.Tests.Unit", "tests\unit\Syrx.Commanders.Databases.Connectors.SqlServer.Tests.Unit\Syrx.Commanders.Databases.Connectors.SqlServer.Tests.Unit.csproj", "{A01AB7BB-3697-46FC-AAE8-715D1490CAFD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Syrx.Tests.Extensions", "tests\unit\Syrx.Tests.Extensions\Syrx.Tests.Extensions.csproj", "{2CAB9D9B-E25C-422C-98F7-A3E5106CA02D}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".submodules", ".submodules", "{6F0677BA-6783-42E8-8EBC-F618CB98977E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Syrx.Commanders.Databases", "Syrx.Commanders.Databases", "{039E70A0-1160-45D5-B979-7F31BA0F559D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{25E202EE-8048-4CF9-BF98-6505D886B87B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{A456BC15-21A3-4CC6-B514-05442DB15A95}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "unit", "unit", "{6111BB4E-FCED-4458-B0B9-E8CEB4400105}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "integration", "integration", "{48E1B9B6-380A-49F3-B515-F538554DB168}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Syrx.Commanders.Databases.Tests.Extensions", ".submodules\Syrx.Commanders.Databases\tests\unit\Syrx.Commanders.Databases.Tests.Extensions\Syrx.Commanders.Databases.Tests.Extensions.csproj", "{BEEDF276-FED5-4761-8765-58BE9DD0E224}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Syrx.Commanders.Databases.Tests.Integration.Models", ".submodules\Syrx.Commanders.Databases\tests\integration\Syrx.Commanders.Databases.Tests.Integration.Models\Syrx.Commanders.Databases.Tests.Integration.Models.csproj", "{7765206D-968C-4529-A7CA-A42511F04736}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Syrx.Commanders.Databases.Tests.Integration", ".submodules\Syrx.Commanders.Databases\tests\integration\Syrx.Commanders.Databases.Tests.Integration\Syrx.Commanders.Databases.Tests.Integration.csproj", "{AB05ADF4-F612-4620-8820-B781CAB35AED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Syrx.Commanders.Databases", ".submodules\Syrx.Commanders.Databases\src\Syrx.Commanders.Databases\Syrx.Commanders.Databases.csproj", "{50B2D203-22D0-4233-89BD-0787BDC0284A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Syrx.Commanders.Databases.Settings.Readers", ".submodules\Syrx.Commanders.Databases\src\Syrx.Commanders.Databases.Settings.Readers\Syrx.Commanders.Databases.Settings.Readers.csproj", "{99AE3465-A363-48D0-B9FE-D983FACA9C8E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Syrx.Commanders.Databases.Connectors", ".submodules\Syrx.Commanders.Databases\src\Syrx.Commanders.Databases.Connectors\Syrx.Commanders.Databases.Connectors.csproj", "{C57B1DB0-CE97-4024-B78F-C2EBB71F65FE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Syrx.Commanders.Databases.Settings", ".submodules\Syrx.Commanders.Databases\src\Syrx.Commanders.Databases.Settings\Syrx.Commanders.Databases.Settings.csproj", "{E3EC5C87-561B-4FC7-9B9A-030A578C5FCB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Syrx.Commanders.Databases.Builders", ".submodules\Syrx.Commanders.Databases\src\Syrx.Commanders.Databases.Builders\Syrx.Commanders.Databases.Builders.csproj", "{E5291C89-CC47-45A3-9FA4-A0610CF91F72}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{838DE81D-38F4-4057-B6C0-FCBC7CC35541}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\publish.yml = .github\workflows\publish.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{3D265824-0282-43F0-A43D-D685992DC38F}"
+	ProjectSection(SolutionItems) = preProject
+		.github\dependabot.yml = .github\dependabot.yml
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Syrx.Commanders.Databases.Connectors.Extensions", ".submodules\Syrx.Commanders.Databases\src\Syrx.Commanders.Databases.Connectors.Extensions\Syrx.Commanders.Databases.Connectors.Extensions.csproj", "{EBF2F2D7-64A8-4B54-841C-ACEB863A0584}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Syrx.Commanders.Databases.Extensions", ".submodules\Syrx.Commanders.Databases\src\Syrx.Commanders.Databases.Extensions\Syrx.Commanders.Databases.Extensions.csproj", "{DFDBF0FE-E033-4D89-B841-83B371612B7C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Syrx.Commanders.Databases.Settings.Extensions", ".submodules\Syrx.Commanders.Databases\src\Syrx.Commanders.Databases.Settings.Extensions\Syrx.Commanders.Databases.Settings.Extensions.csproj", "{C4D2F473-F3CF-484D-B51F-89C832FE10D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Syrx.Commanders.Databases.Settings.Extensions.Json", ".submodules\Syrx.Commanders.Databases\src\Syrx.Commanders.Databases.Settings.Extensions.Json\Syrx.Commanders.Databases.Settings.Extensions.Json.csproj", "{8DF7A542-99CB-474E-9557-31EEC295962E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Syrx.Commanders.Databases.Settings.Extensions.Xml", ".submodules\Syrx.Commanders.Databases\src\Syrx.Commanders.Databases.Settings.Extensions.Xml\Syrx.Commanders.Databases.Settings.Extensions.Xml.csproj", "{E1DAE0EA-FE51-4789-B88F-1462F7854BEC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Syrx.Commanders.Databases.Settings.Readers.Extensions", ".submodules\Syrx.Commanders.Databases\src\Syrx.Commanders.Databases.Settings.Readers.Extensions\Syrx.Commanders.Databases.Settings.Readers.Extensions.csproj", "{50CFA52E-18EA-4EEE-9FBD-D842E22D59F9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".submodules", ".submodules", "{17745538-3348-4CC7-A333-731D6AA782AA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Syrx", ".submodules\Syrx.Commanders.Databases\.submodules\Syrx\src\Syrx\Syrx.csproj", "{8C86A6F1-6212-48FB-8B36-B97E82E0CE03}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Syrx.Connectors", ".submodules\Syrx.Commanders.Databases\.submodules\Syrx\src\Syrx.Connectors\Syrx.Connectors.csproj", "{53C9105A-B505-4B78-AB51-69970875AE66}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Syrx.Extensions", ".submodules\Syrx.Commanders.Databases\.submodules\Syrx\src\Syrx.Extensions\Syrx.Extensions.csproj", "{B82236CA-6A8B-4B70-B500-09CD5DDEA329}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Syrx.Readers", ".submodules\Syrx.Commanders.Databases\.submodules\Syrx\src\Syrx.Readers\Syrx.Readers.csproj", "{FC1C2205-F603-4F29-B418-E9DFD1FCF175}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Syrx.Settings", ".submodules\Syrx.Commanders.Databases\.submodules\Syrx\src\Syrx.Settings\Syrx.Settings.csproj", "{6DC2A010-EC7D-4943-AC58-BE96C52C0D81}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -65,10 +123,6 @@ Global
 		{BE6902CA-2512-46F8-8E8B-DC3BC7942F6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BE6902CA-2512-46F8-8E8B-DC3BC7942F6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BE6902CA-2512-46F8-8E8B-DC3BC7942F6F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{62AB6FDF-717D-4A34-B759-61D21F2C8BDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{62AB6FDF-717D-4A34-B759-61D21F2C8BDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{62AB6FDF-717D-4A34-B759-61D21F2C8BDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{62AB6FDF-717D-4A34-B759-61D21F2C8BDC}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B402F822-E0FF-4E24-BA0F-034F9D9F24C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B402F822-E0FF-4E24-BA0F-034F9D9F24C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B402F822-E0FF-4E24-BA0F-034F9D9F24C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -81,10 +135,82 @@ Global
 		{A01AB7BB-3697-46FC-AAE8-715D1490CAFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A01AB7BB-3697-46FC-AAE8-715D1490CAFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A01AB7BB-3697-46FC-AAE8-715D1490CAFD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2CAB9D9B-E25C-422C-98F7-A3E5106CA02D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2CAB9D9B-E25C-422C-98F7-A3E5106CA02D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2CAB9D9B-E25C-422C-98F7-A3E5106CA02D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2CAB9D9B-E25C-422C-98F7-A3E5106CA02D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BEEDF276-FED5-4761-8765-58BE9DD0E224}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEEDF276-FED5-4761-8765-58BE9DD0E224}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEEDF276-FED5-4761-8765-58BE9DD0E224}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEEDF276-FED5-4761-8765-58BE9DD0E224}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7765206D-968C-4529-A7CA-A42511F04736}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7765206D-968C-4529-A7CA-A42511F04736}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7765206D-968C-4529-A7CA-A42511F04736}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7765206D-968C-4529-A7CA-A42511F04736}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB05ADF4-F612-4620-8820-B781CAB35AED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB05ADF4-F612-4620-8820-B781CAB35AED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB05ADF4-F612-4620-8820-B781CAB35AED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB05ADF4-F612-4620-8820-B781CAB35AED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50B2D203-22D0-4233-89BD-0787BDC0284A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50B2D203-22D0-4233-89BD-0787BDC0284A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50B2D203-22D0-4233-89BD-0787BDC0284A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50B2D203-22D0-4233-89BD-0787BDC0284A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99AE3465-A363-48D0-B9FE-D983FACA9C8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99AE3465-A363-48D0-B9FE-D983FACA9C8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99AE3465-A363-48D0-B9FE-D983FACA9C8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99AE3465-A363-48D0-B9FE-D983FACA9C8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C57B1DB0-CE97-4024-B78F-C2EBB71F65FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C57B1DB0-CE97-4024-B78F-C2EBB71F65FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C57B1DB0-CE97-4024-B78F-C2EBB71F65FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C57B1DB0-CE97-4024-B78F-C2EBB71F65FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3EC5C87-561B-4FC7-9B9A-030A578C5FCB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3EC5C87-561B-4FC7-9B9A-030A578C5FCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3EC5C87-561B-4FC7-9B9A-030A578C5FCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3EC5C87-561B-4FC7-9B9A-030A578C5FCB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5291C89-CC47-45A3-9FA4-A0610CF91F72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5291C89-CC47-45A3-9FA4-A0610CF91F72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5291C89-CC47-45A3-9FA4-A0610CF91F72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5291C89-CC47-45A3-9FA4-A0610CF91F72}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBF2F2D7-64A8-4B54-841C-ACEB863A0584}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBF2F2D7-64A8-4B54-841C-ACEB863A0584}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBF2F2D7-64A8-4B54-841C-ACEB863A0584}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBF2F2D7-64A8-4B54-841C-ACEB863A0584}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DFDBF0FE-E033-4D89-B841-83B371612B7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFDBF0FE-E033-4D89-B841-83B371612B7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFDBF0FE-E033-4D89-B841-83B371612B7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFDBF0FE-E033-4D89-B841-83B371612B7C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4D2F473-F3CF-484D-B51F-89C832FE10D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4D2F473-F3CF-484D-B51F-89C832FE10D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4D2F473-F3CF-484D-B51F-89C832FE10D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4D2F473-F3CF-484D-B51F-89C832FE10D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8DF7A542-99CB-474E-9557-31EEC295962E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8DF7A542-99CB-474E-9557-31EEC295962E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8DF7A542-99CB-474E-9557-31EEC295962E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8DF7A542-99CB-474E-9557-31EEC295962E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1DAE0EA-FE51-4789-B88F-1462F7854BEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1DAE0EA-FE51-4789-B88F-1462F7854BEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1DAE0EA-FE51-4789-B88F-1462F7854BEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1DAE0EA-FE51-4789-B88F-1462F7854BEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50CFA52E-18EA-4EEE-9FBD-D842E22D59F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50CFA52E-18EA-4EEE-9FBD-D842E22D59F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50CFA52E-18EA-4EEE-9FBD-D842E22D59F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50CFA52E-18EA-4EEE-9FBD-D842E22D59F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C86A6F1-6212-48FB-8B36-B97E82E0CE03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C86A6F1-6212-48FB-8B36-B97E82E0CE03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C86A6F1-6212-48FB-8B36-B97E82E0CE03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C86A6F1-6212-48FB-8B36-B97E82E0CE03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53C9105A-B505-4B78-AB51-69970875AE66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53C9105A-B505-4B78-AB51-69970875AE66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53C9105A-B505-4B78-AB51-69970875AE66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53C9105A-B505-4B78-AB51-69970875AE66}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B82236CA-6A8B-4B70-B500-09CD5DDEA329}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B82236CA-6A8B-4B70-B500-09CD5DDEA329}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B82236CA-6A8B-4B70-B500-09CD5DDEA329}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B82236CA-6A8B-4B70-B500-09CD5DDEA329}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC1C2205-F603-4F29-B418-E9DFD1FCF175}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC1C2205-F603-4F29-B418-E9DFD1FCF175}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC1C2205-F603-4F29-B418-E9DFD1FCF175}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC1C2205-F603-4F29-B418-E9DFD1FCF175}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6DC2A010-EC7D-4943-AC58-BE96C52C0D81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6DC2A010-EC7D-4943-AC58-BE96C52C0D81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6DC2A010-EC7D-4943-AC58-BE96C52C0D81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6DC2A010-EC7D-4943-AC58-BE96C52C0D81}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -96,11 +222,36 @@ Global
 		{BE6902CA-2512-46F8-8E8B-DC3BC7942F6F} = {AAE457A3-C435-4EB9-8D40-59F3F38F67D7}
 		{058AF582-4094-490A-A70E-63CB7A80D75F} = {7278E8F6-25BE-4CF3-A56B-AD4652DCF531}
 		{9076BD5D-68F5-4698-9545-EF24DCE2A3D1} = {7278E8F6-25BE-4CF3-A56B-AD4652DCF531}
-		{62AB6FDF-717D-4A34-B759-61D21F2C8BDC} = {058AF582-4094-490A-A70E-63CB7A80D75F}
 		{B402F822-E0FF-4E24-BA0F-034F9D9F24C4} = {058AF582-4094-490A-A70E-63CB7A80D75F}
 		{76F8217C-564A-4F3B-A5A1-9FDDFE172B49} = {9076BD5D-68F5-4698-9545-EF24DCE2A3D1}
 		{A01AB7BB-3697-46FC-AAE8-715D1490CAFD} = {9076BD5D-68F5-4698-9545-EF24DCE2A3D1}
-		{2CAB9D9B-E25C-422C-98F7-A3E5106CA02D} = {9076BD5D-68F5-4698-9545-EF24DCE2A3D1}
+		{039E70A0-1160-45D5-B979-7F31BA0F559D} = {6F0677BA-6783-42E8-8EBC-F618CB98977E}
+		{25E202EE-8048-4CF9-BF98-6505D886B87B} = {039E70A0-1160-45D5-B979-7F31BA0F559D}
+		{A456BC15-21A3-4CC6-B514-05442DB15A95} = {039E70A0-1160-45D5-B979-7F31BA0F559D}
+		{6111BB4E-FCED-4458-B0B9-E8CEB4400105} = {A456BC15-21A3-4CC6-B514-05442DB15A95}
+		{48E1B9B6-380A-49F3-B515-F538554DB168} = {A456BC15-21A3-4CC6-B514-05442DB15A95}
+		{BEEDF276-FED5-4761-8765-58BE9DD0E224} = {6111BB4E-FCED-4458-B0B9-E8CEB4400105}
+		{7765206D-968C-4529-A7CA-A42511F04736} = {48E1B9B6-380A-49F3-B515-F538554DB168}
+		{AB05ADF4-F612-4620-8820-B781CAB35AED} = {48E1B9B6-380A-49F3-B515-F538554DB168}
+		{50B2D203-22D0-4233-89BD-0787BDC0284A} = {25E202EE-8048-4CF9-BF98-6505D886B87B}
+		{99AE3465-A363-48D0-B9FE-D983FACA9C8E} = {25E202EE-8048-4CF9-BF98-6505D886B87B}
+		{C57B1DB0-CE97-4024-B78F-C2EBB71F65FE} = {25E202EE-8048-4CF9-BF98-6505D886B87B}
+		{E3EC5C87-561B-4FC7-9B9A-030A578C5FCB} = {25E202EE-8048-4CF9-BF98-6505D886B87B}
+		{E5291C89-CC47-45A3-9FA4-A0610CF91F72} = {25E202EE-8048-4CF9-BF98-6505D886B87B}
+		{838DE81D-38F4-4057-B6C0-FCBC7CC35541} = {3D265824-0282-43F0-A43D-D685992DC38F}
+		{3D265824-0282-43F0-A43D-D685992DC38F} = {666B6BE9-957B-4480-8FF4-43082F869787}
+		{EBF2F2D7-64A8-4B54-841C-ACEB863A0584} = {25E202EE-8048-4CF9-BF98-6505D886B87B}
+		{DFDBF0FE-E033-4D89-B841-83B371612B7C} = {25E202EE-8048-4CF9-BF98-6505D886B87B}
+		{C4D2F473-F3CF-484D-B51F-89C832FE10D9} = {25E202EE-8048-4CF9-BF98-6505D886B87B}
+		{8DF7A542-99CB-474E-9557-31EEC295962E} = {25E202EE-8048-4CF9-BF98-6505D886B87B}
+		{E1DAE0EA-FE51-4789-B88F-1462F7854BEC} = {25E202EE-8048-4CF9-BF98-6505D886B87B}
+		{50CFA52E-18EA-4EEE-9FBD-D842E22D59F9} = {25E202EE-8048-4CF9-BF98-6505D886B87B}
+		{17745538-3348-4CC7-A333-731D6AA782AA} = {039E70A0-1160-45D5-B979-7F31BA0F559D}
+		{8C86A6F1-6212-48FB-8B36-B97E82E0CE03} = {17745538-3348-4CC7-A333-731D6AA782AA}
+		{53C9105A-B505-4B78-AB51-69970875AE66} = {17745538-3348-4CC7-A333-731D6AA782AA}
+		{B82236CA-6A8B-4B70-B500-09CD5DDEA329} = {17745538-3348-4CC7-A333-731D6AA782AA}
+		{FC1C2205-F603-4F29-B418-E9DFD1FCF175} = {17745538-3348-4CC7-A333-731D6AA782AA}
+		{6DC2A010-EC7D-4943-AC58-BE96C52C0D81} = {17745538-3348-4CC7-A333-731D6AA782AA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5A04028B-2D32-499D-84C4-E12FD1345B49}

@@ -9,7 +9,9 @@
 	</PropertyGroup>
 	<ItemGroup>
 		<PackageReference Include="Microsoft.Data.SqlClient" Version="5.2.2" />
-		<PackageReference Include="Syrx.Commanders.Databases.Connectors" Version="2.*" />
+	</ItemGroup>
+	<ItemGroup>
+	  <ProjectReference Include="..\..\.submodules\Syrx.Commanders.Databases\src\Syrx.Commanders.Databases.Connectors\Syrx.Commanders.Databases.Connectors.csproj" />
 	</ItemGroup>
 
 </Project>

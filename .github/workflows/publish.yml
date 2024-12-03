@@ -30,7 +30,12 @@ jobs:
     steps:    
     - uses: actions/checkout@v4
       name: Setup dotnet ${{ matrix.dotnet-version }}
-     
+      with:
+        submodules: recursive
+
+    - name: Initialize submodules
+      run: git submodule update --init --recursive
+        
     - uses: actions/setup-dotnet@v4
       with:
           dotnet-version: ${{ matrix.dotnet-version }}
@@ -67,7 +72,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
-    - name: Setup .NET
+      with: 
+        submodules: recursive
+    - name: Setup .NET ${{ matrix.dotnet-version }}
+      
+
       uses: actions/setup-dotnet@v4
     - name: Run tests
       run: dotnet test --configuration Release
