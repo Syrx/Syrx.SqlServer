@@ -2,6 +2,28 @@
 
 SQL Server database connector implementation for the Syrx data access framework.
 
+## Table of Contents
+
+- [Overview](#overview)
+- [Features](#features)
+- [Installation](#installation)
+- [Architecture](#architecture)
+- [Key Components](#key-components)
+  - [SqlServerDatabaseConnector](#sqlserverdatabaseconnector)
+  - [Connection Creation Process](#connection-creation-process)
+- [Usage](#usage)
+- [Connection String Support](#connection-string-support)
+  - [Integrated Security](#integrated-security)
+  - [SQL Server Authentication](#sql-server-authentication)
+  - [Named Instances](#named-instances)
+  - [Azure SQL Database](#azure-sql-database)
+- [Configuration Requirements](#configuration-requirements)
+- [Error Handling](#error-handling)
+- [Performance Considerations](#performance-considerations)
+- [Related Packages](#related-packages)
+- [License](#license)
+- [Credits](#credits)
+
 ## Overview
 
 `Syrx.Commanders.Databases.Connectors.SqlServer` provides the low-level SQL Server database connector implementation for Syrx. This package contains the core connector logic that manages SQL Server database connections using Microsoft.Data.SqlClient.

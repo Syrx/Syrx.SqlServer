@@ -2,6 +2,26 @@
 
 Dependency injection and configuration extensions for Syrx SQL Server integration.
 
+## Table of Contents
+
+- [Overview](#overview)
+- [Features](#features)
+- [Installation](#installation)
+- [Quick Start](#quick-start)
+  - [Basic Configuration](#basic-configuration)
+  - [Advanced Configuration](#advanced-configuration)
+- [Configuration Methods](#configuration-methods)
+  - [Connection String Management](#connection-string-management)
+  - [Command Configuration](#command-configuration)
+  - [Service Lifetime](#service-lifetime)
+- [Command Builder Methods](#command-builder-methods)
+- [Multi-Repository Configuration](#multi-repository-configuration)
+- [Repository Registration](#repository-registration)
+- [Environment-Specific Configuration](#environment-specific-configuration)
+- [Related Packages](#related-packages)
+- [License](#license)
+- [Credits](#credits)
+
 ## Overview
 
 `Syrx.SqlServer.Extensions` provides easy-to-use extension methods and configuration builders for integrating Syrx with Microsoft SQL Server databases. This package simplifies the setup process and provides fluent APIs for configuration.

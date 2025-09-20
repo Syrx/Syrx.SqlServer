@@ -2,6 +2,29 @@
 
 Dependency injection extensions for Syrx SQL Server database connectors.
 
+## Table of Contents
+
+- [Overview](#overview)
+- [Features](#features)
+- [Installation](#installation)
+- [Key Extensions](#key-extensions)
+  - [ServiceCollectionExtensions](#servicecollectionextensions)
+  - [SqlServerConnectorExtensions](#sqlserverconnectorextensions)
+- [Usage](#usage)
+  - [Basic Registration](#basic-registration)
+  - [Custom Lifetime](#custom-lifetime)
+  - [Advanced Configuration](#advanced-configuration)
+- [Service Registration Details](#service-registration-details)
+- [Service Lifetimes](#service-lifetimes)
+  - [Lifetime Recommendations](#lifetime-recommendations)
+- [Registration Process](#registration-process)
+- [Integration with Other Extensions](#integration-with-other-extensions)
+- [Error Handling](#error-handling)
+- [Testing Support](#testing-support)
+- [Related Packages](#related-packages)
+- [License](#license)
+- [Credits](#credits)
+
 ## Overview
 
 `Syrx.Commanders.Databases.Connectors.SqlServer.Extensions` provides dependency injection and service registration extensions specifically for SQL Server database connectors in the Syrx framework. This package enables easy registration of SQL Server connectors with DI containers.
