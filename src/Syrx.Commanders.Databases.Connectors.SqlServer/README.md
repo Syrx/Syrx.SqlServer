@@ -43,7 +43,7 @@ Install-Package Syrx.Commanders.Databases.Connectors.SqlServer
 
 **PackageReference**
 ```xml
-<PackageReference Include="Syrx.Commanders.Databases.Connectors.SqlServer" Version="2.4.5" />
+<PackageReference Include="Syrx.Commanders.Databases.Connectors.SqlServer" Version="3.0.0" />
 ```
 
 ## Architecture

@@ -17,8 +17,8 @@ This project provides Syrx support for SqlServer. The overall experience of usin
 |--|--|
 |.NET CLI|```dotnet add package Syrx.SqlServer.Extensions```
 |Package Manager|```Install-Package Syrx.SqlServer.Extensions```
-|Package Reference|```<PackageReference Include="Syrx.SqlServer.Extensions" Version="2.4.0" />```|
-|Paket CLI|```paket add Syrx.SqlServer.Extensions --version 2.4.0```|
+|Package Reference|```<PackageReference Include="Syrx.SqlServer.Extensions" Version="3.0.0" />```|
+|Paket CLI|```paket add Syrx.SqlServer.Extensions --version 3.0.0```|
 
 However, if you don't need the configuration options, you can install the standalone package via [nuget](https://www.nuget.org/packages/Syrx.SqlServer/).  
 
@@ -26,8 +26,8 @@ However, if you don't need the configuration options, you can install the standa
 |--|--|
 |.NET CLI|```dotnet add package Syrx.SqlServer```
 |Package Manager|```Install-Package Syrx.SqlServer```
-|Package Reference|```<PackageReference Include="Syrx.SqlServer" Version="2.4.0" />```|
-|Paket CLI|```paket add Syrx.SqlServer --version 2.4.0```|
+|Package Reference|```<PackageReference Include="Syrx.SqlServer" Version="3.0.0" />```|
+|Paket CLI|```paket add Syrx.SqlServer --version 3.0.0```|
 
 
 ## Extensions

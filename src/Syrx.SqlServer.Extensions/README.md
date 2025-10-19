@@ -47,7 +47,7 @@ Install-Package Syrx.SqlServer.Extensions
 
 **PackageReference**
 ```xml
-<PackageReference Include="Syrx.SqlServer.Extensions" Version="2.4.5" />
+<PackageReference Include="Syrx.SqlServer.Extensions" Version="3.0.0" />
 ```
 
 ## Quick Start
