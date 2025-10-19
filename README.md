@@ -2,6 +2,12 @@
 
 This project provides Syrx support for SqlServer. The overall experience of using [Syrx](https://github.com/Syrx/Syrx) remains the same. The only difference should be during dependency registration. 
 
+## Table of Contents
+
+- [Installation](#installation)
+- [Extensions](#extensions)
+- [Credits](#credits) 
+
 
 ## Installation 
 > [!TIP]
