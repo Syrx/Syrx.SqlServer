@@ -6,7 +6,7 @@
     <EnablePackageValidation>false</EnablePackageValidation>
     
     <!-- Basic build properties -->
-    <TargetFramework>net8.0</TargetFramework>
+    <TargetFrameworks>net8.0;net9.0</TargetFrameworks>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
