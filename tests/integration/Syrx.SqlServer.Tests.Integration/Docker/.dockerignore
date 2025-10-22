@@ -1,0 +1,14 @@
+# Ignore documentation and management files during Docker build
+README.md
+manage-docker.ps1
+docker-compose.yml
+
+# Ignore any temp or cache files
+*.tmp
+*.log
+.DS_Store
+Thumbs.db
+
+# Ignore any Git files if they exist
+.git
+.gitignore

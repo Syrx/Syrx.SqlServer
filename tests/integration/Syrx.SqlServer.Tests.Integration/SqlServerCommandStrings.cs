@@ -127,6 +127,29 @@ end;";
 
         }
 
+        public static class Validation
+        {
+            public const string ValidateTablesExist = @"
+select case when exists (
+    select 1 from INFORMATION_SCHEMA.TABLES 
+    where TABLE_SCHEMA = 'dbo' 
+    and TABLE_NAME = @tableName
+) then 1 else 0 end;";
+
+            public const string ValidateStoredProceduresExist = @"
+select case when exists (
+    select 1 from INFORMATION_SCHEMA.ROUTINES 
+    where ROUTINE_SCHEMA = 'dbo' 
+    and ROUTINE_NAME = @procedureName
+    and ROUTINE_TYPE = 'PROCEDURE'
+) then 1 else 0 end;";
+
+            public const string ValidateDataExists = @"select count(*) from [dbo].[poco];";
+
+            public const string RefreshDataIfNeeded = @"
+select max([modified]) from [dbo].[poco];";
+        }
+
         public static class Query
         {
             public static class Multimap

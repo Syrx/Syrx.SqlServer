@@ -8,68 +8,36 @@
                             b => b
                             .AddConnectionString(alias, connectionString)
                             //.AddDatabaseSetup(alias)
-                            .AddSetupBuilderOptions(alias)
+                            //.AddSetupBuilderOptions(alias)
+                            .AddValidation(alias)
                             .AddQueryMultimap(alias)
                             .AddQueryMultiple(alias)
                             .AddExecute(alias)
                             //.AddDisposeCommands()
                             );
         }
-                
-        public static CommanderSettingsBuilder AddSetupBuilderOptions(this CommanderSettingsBuilder builder, string alias)
+
+        public static CommanderSettingsBuilder AddValidation(this CommanderSettingsBuilder builder, string alias)
         {
             return builder.AddCommand(
                 a => a.ForType<DatabaseBuilder>(
                     b => b
                     .ForMethod(
-                        nameof(DatabaseBuilder.CreateDatabase), c => c
+                        nameof(DatabaseBuilder.ValidateTablesExist), c => c
                         .UseConnectionAlias(alias)
-                        .UseCommandText(SqlServerCommandStrings.Setup.CreateDatabase))
+                        .UseCommandText(SqlServerCommandStrings.Validation.ValidateTablesExist))
                     .ForMethod(
-                        nameof(DatabaseBuilder.DropTableCreatorProcedure), c => c
+                        nameof(DatabaseBuilder.ValidateStoredProceduresExist), c => c
                         .UseConnectionAlias(alias)
-                        .UseCommandText(SqlServerCommandStrings.Setup.DropTableCreatorProcedure))
+                        .UseCommandText(SqlServerCommandStrings.Validation.ValidateStoredProceduresExist))
                     .ForMethod(
-                        nameof(DatabaseBuilder.CreateTableCreatorProcedure), c => c
+                        nameof(DatabaseBuilder.ValidateDataExists), c => c
                         .UseConnectionAlias(alias)
-                        .UseCommandText(SqlServerCommandStrings.Setup.CreateTableCreatorProcedure))
+                        .UseCommandText(SqlServerCommandStrings.Validation.ValidateDataExists))
                     .ForMethod(
-                        nameof(DatabaseBuilder.CreateTable), c => c
+                        nameof(DatabaseBuilder.RefreshDataIfNeeded), c => c
                         .UseConnectionAlias(alias)
-                        .SetCommandType(CommandType.StoredProcedure)
-                        .UseCommandText(SqlServerCommandStrings.Setup.CreateTable))
-                    .ForMethod(
-                        nameof(DatabaseBuilder.DropIdentityTesterProcedure), c => c
-                        .UseConnectionAlias(alias)
-                        .UseCommandText(SqlServerCommandStrings.Setup.DropIdentityTesterProcedure))
-                    .ForMethod(
-                        nameof(DatabaseBuilder.CreateIdentityTesterProcedure), c => c
-                        .UseConnectionAlias(alias)
-                        .UseCommandText(SqlServerCommandStrings.Setup.CreateIdentityTesterProcedure))
-                    .ForMethod(
-                        nameof(DatabaseBuilder.DropBulkInsertProcedure), c => c
-                        .UseConnectionAlias(alias)
-                        .UseCommandText(SqlServerCommandStrings.Setup.DropBulkInsertProcedure))
-                    .ForMethod(
-                        nameof(DatabaseBuilder.CreateBulkInsertProcedure), c => c
-                        .UseConnectionAlias(alias)
-                        .UseCommandText(SqlServerCommandStrings.Setup.CreateBulkInsertProcedure))
-                    .ForMethod(
-                        nameof(DatabaseBuilder.DropBulkInsertAndReturnProcedure), c => c
-                        .UseConnectionAlias(alias)
-                        .UseCommandText(SqlServerCommandStrings.Setup.DropBulkInsertAndReturnProcedure))
-                    .ForMethod(
-                        nameof(DatabaseBuilder.CreateBulkInsertAndReturnProcedure), c => c
-                        .UseConnectionAlias(alias)
-                        .UseCommandText(SqlServerCommandStrings.Setup.CreateBulkInsertAndReturnProcedure))
-                    .ForMethod(
-                        nameof(DatabaseBuilder.DropTableClearingProcedure), c => c
-                        .UseConnectionAlias(alias)
-                        .UseCommandText(SqlServerCommandStrings.Setup.DropTableClearingProcedure))
-                    .ForMethod(
-                        nameof(DatabaseBuilder.CreateTableClearingProcedure), c => c
-                        .UseConnectionAlias(alias)
-                        .UseCommandText(SqlServerCommandStrings.Setup.CreateTableClearingProcedure))
+                        .UseCommandText(SqlServerCommandStrings.Validation.RefreshDataIfNeeded))
                     .ForMethod(
                         nameof(DatabaseBuilder.ClearTable), c => c
                         .UseConnectionAlias(alias)
