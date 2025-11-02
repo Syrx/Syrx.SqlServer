@@ -1,182 +1,262 @@
-# Syrx SQL Server Test Database Docker Setup
+# SQL Server Docker Setup for Integration Tests# Syrx SQL Server Docker Integration Tests
 
-This Docker setup provides a pre-configured SQL Server instance with all necessary database objects for running the `Syrx.SqlServer.Tests.Integration` test suite.
 
-## Features
 
-- **SQL Server 2022 Developer Edition** - Latest SQL Server version
-- **Pre-configured Test Database** - Creates `Syrx` database with all required tables
-- **Test Data Seeded** - Populates tables with 150 test records
-- **Stored Procedures** - All required test procedures are pre-created
-- **Health Checks** - Container health monitoring included
+This directory contains Docker infrastructure for running Syrx.SqlServer integration tests.This directory contains Docker infrastructure for running Syrx SQL Server integration tests using a containerized SQL Server database.
 
-## Database Objects Created
 
-### Tables
-- **`poco`** - Main test table with columns: `id`, `name`, `value`, `modified`
-- **`identity_test`** - For identity/auto-increment testing
-- **`bulk_insert`** - For bulk operation testing
-- **`distributed_transaction`** - For distributed transaction testing
 
-### Stored Procedures
-- **`usp_create_table`** - Creates tables dynamically for tests
-- **`usp_identity_tester`** - Tests identity column functionality
-- **`usp_bulk_insert`** - Performs bulk insert operations
-- **`usp_bulk_insert_and_return`** - Bulk insert with result return
-- **`usp_clear_table`** - Truncates specified tables
+## Quick Start## Overview
 
-## Quick Start
 
-### Using Docker Compose (Recommended)
 
-1. Navigate to this directory:
-   ```powershell
-   cd "c:\Projects\Syrx\Syrx.SqlServer\tests\integration\Syrx.SqlServer.Tests.Integration\Docker"
-   ```
+**Important:** Use the provided script to start the database and run initialization:The Docker setup provides a consistent, isolated SQL Server environment for integration testing that mirrors the approach used in Syrx.MySql and Syrx.Npgsql. This ensures consistency across all Syrx database provider implementations.
 
-2. Start the container:
-   ```powershell
-   docker-compose up -d
-   ```
 
-3. Wait for initialization to complete (about 60 seconds):
-   ```powershell
-   docker-compose logs -f syrx-sqlserver-test
-   ```
 
-4. When ready, the connection string will be:
-   ```
-   Server=localhost,1433;Database=Syrx;User Id=sa;Password=YourStrong!Passw0rd;TrustServerCertificate=true;
-   ```
+```powershell## File Structure
 
-### Using Docker Build
+# From the test project directory:
 
-1. Build the image:
-   ```powershell
-   docker build -t syrx-sqlserver-test .
-   ```
+.\start-test-database.ps1```
 
-2. Run the container:
-   ```powershell
-   docker run -d -p 1433:1433 --name syrx-sqlserver-test syrx-sqlserver-test
-   ```
+Docker/
 
-## Configuration
+# Then run tests per framework:├── docker-compose.yml          # Docker Compose configuration
 
-### Environment Variables
+dotnet test --framework net8.0├── Dockerfile                  # SQL Server container definition
 
-- **`MSSQL_SA_PASSWORD`** - SA user password (default: `YourStrong!Passw0rd`)
-- **`ACCEPT_EULA`** - Accept SQL Server EULA (set to `Y`)
-- **`MSSQL_PID`** - SQL Server edition (default: `Developer`)
+dotnet test --framework net9.0├── init-database.sh            # Database initialization script
 
-### Connection Details
+```├── init-scripts/               # Database initialization scripts
 
-- **Server**: `localhost,1433`
-- **Database**: `Syrx`
-- **Username**: `sa`
-- **Password**: `YourStrong!Passw0rd`
-- **Trust Server Certificate**: `true`
+│   ├── 01-create-database.sql  # Database setup
 
-## Test Integration
+## Why Per-Framework Testing?│   ├── 02-create-tables.sql    # Test table creation
 
-### Updating Test Configuration
+│   ├── 03-create-procedures.sql # Stored procedures
 
-To use this Docker instance in your integration tests, update your test configuration to use:
+Both .NET 8.0 and .NET 9.0 tests share the same database. Running them concurrently causes data contamination. Always specify `--framework`:│   └── 04-seed-data.sql        # Test data seeding
 
-```csharp
-var connectionString = "Server=localhost,1433;Database=Syrx;User Id=sa;Password=YourStrong!Passw0rd;TrustServerCertificate=true;";
-```
+└── README.md                   # This file
 
-### Health Check
+```bash```
 
-The container includes health checks to ensure SQL Server is ready:
+✅ dotnet test --framework net8.0     # Correct
 
-```powershell
-docker-compose ps
-```
+✅ dotnet test --framework net9.0     # Correct## Prerequisites
 
-Look for `healthy` status before running tests.
+❌ dotnet test                         # Wrong - runs both concurrently
 
-## Management Commands
+```- Docker Desktop or Docker Engine installed
 
-### View Logs
-```powershell
-docker-compose logs syrx-sqlserver-test
-```
+- Docker Compose available
 
-### Connect to Database
-```powershell
-docker exec -it syrx-sqlserver-test /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P "YourStrong!Passw0rd"
-```
+## Manual Setup- PowerShell (for Windows users)
 
-### Stop and Remove
-```powershell
-docker-compose down
-```
 
-### Stop and Remove with Data
-```powershell
-docker-compose down -v
-```
 
-## Data Persistence
+If you prefer manual setup:## Starting the Test Database
 
-The Docker Compose configuration includes a named volume (`syrx_sqlserver_data`) to persist database files between container restarts. To start fresh, remove the volume:
 
-```powershell
-docker-compose down -v
+
+```powershell### Using Docker Compose
+
+# 1. Start SQL Server
+
+cd Docker```powershell
+
+docker compose up -d# Navigate to the Docker directory
+
+cd tests/integration/Syrx.SqlServer.Tests.Integration/Docker
+
+# 2. Wait for healthy status (~60 seconds)
+
+docker ps# Start the SQL Server container
+
 docker-compose up -d
+
+# 3. Run initialization scripts in order
+
+docker exec syrx-sqlserver-test /opt/mssql-tools18/bin/sqlcmd -S localhost -U sa -P 'YourStrong!Passw0rd' -C -i /docker-entrypoint-initdb.d/01-create-database.sql# Check container status
+
+docker exec syrx-sqlserver-test /opt/mssql-tools18/bin/sqlcmd -S localhost -U sa -P 'YourStrong!Passw0rd' -C -i /docker-entrypoint-initdb.d/02-create-tables.sqldocker-compose ps
+
+docker exec syrx-sqlserver-test /opt/mssql-tools18/bin/sqlcmd -S localhost -U sa -P 'YourStrong!Passw0rd' -C -i /docker-entrypoint-initdb.d/03-create-procedures.sql
+
+docker exec syrx-sqlserver-test /opt/mssql-tools18/bin/sqlcmd -S localhost -U sa -P 'YourStrong!Passw0rd' -C -i /docker-entrypoint-initdb.d/04-seed-data.sql# View logs
+
+docker-compose logs syrx-sqlserver-test
+
+# 4. Run tests```
+
+dotnet test --framework net8.0
+
+dotnet test --framework net9.0### Using PowerShell (Windows)
+
 ```
 
-## Customization
+```powershell
 
-### Changing the Password
+## Key Difference from MySQL/PostgreSQL# Navigate to the Docker directory
 
-1. Update the password in `docker-compose.yml`:
-   ```yaml
-   environment:
-     - MSSQL_SA_PASSWORD=YourNewPassword!
-   ```
+Set-Location "tests\integration\Syrx.SqlServer.Tests.Integration\Docker"
 
-2. Update the health check command:
-   ```yaml
-   test: ["CMD-SHELL", "/opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P YourNewPassword! -Q 'SELECT 1' || exit 1"]
-   ```
+**SQL Server does NOT auto-execute scripts** from `/docker-entrypoint-initdb.d/` like MySQL and PostgreSQL. Scripts must be run manually or via the helper script.
 
-### Adding Additional Data
+# Start the container
 
-Modify the `04-seed-data.sql` file to include additional test data or tables as needed.
+## Connection Detailsdocker-compose up -d
+
+```
+
+- **Host:** localhost
+
+- **Port:** 1433## Connection Details
+
+- **Database:** Syrx
+
+- **User:** saThe SQL Server container is configured with the following connection details:
+
+- **Password:** YourStrong!Passw0rd
+
+- **Connection String:** `Server=localhost,1433;Database=Syrx;User Id=sa;Password=YourStrong!Passw0rd;TrustServerCertificate=true;`- **Host**: localhost
+
+- **Port**: 1433
+
+## Initialization Scripts- **Database**: Syrx
+
+- **Username**: sa
+
+Scripts in `init-scripts/` execute in order:- **Password**: YourStrong!Passw0rd
+
+- **Connection String**: `Server=localhost,1433;Database=Syrx;User Id=sa;Password=YourStrong!Passw0rd;TrustServerCertificate=true;`
+
+1. `01-create-database.sql` - Creates Syrx database
+
+2. `02-create-tables.sql` - Creates test tables (poco, identity_test, bulk_insert, distributed_transaction)## Database Schema
+
+3. `03-create-procedures.sql` - Creates stored procedures (usp_create_table, usp_identity_tester, etc.)
+
+4. `04-seed-data.sql` - Seeds 150 test rowsThe initialization scripts create the following tables:
+
+
+
+## Troubleshooting### Tables
+
+- `poco` - Main test table with id (INT IDENTITY), name (NVARCHAR), value (DECIMAL), modified (DATETIME)
+
+### "Cannot find object 'poco'"- `identity_test` - Identity testing table with same structure
+
+→ Initialization scripts haven't been run. Use `.\start-test-database.ps1`- `bulk_insert` - Bulk operations table with same structure
+
+- `distributed_transaction` - Distributed transaction testing table with same structure
+
+### Tests expect "entry 1" but get "entry 11"
+
+→ Both frameworks running concurrently. Use `--framework net8.0` or `--framework net9.0`### Stored Procedures
+
+- `usp_create_table` - Dynamic table creation procedure
+
+### Container starts but isn't healthy- `usp_identity_tester` - Identity value testing procedure
+
+→ Wait 60+ seconds for SQL Server initialization- `usp_bulk_insert` - Bulk data insertion procedure
+
+- `usp_bulk_insert_and_return` - Bulk insert with return values
+
+## Cleanup- `usp_clear_table` - Table truncation procedure
+
+
+
+```bash## Running Integration Tests
+
+# Stop containers
+
+docker compose downOnce the SQL Server container is running, you can execute the integration tests:
+
+
+
+# Remove volumes (complete reset)```powershell
+
+docker compose down -v# Run all integration tests
+
+```dotnet test
+
+
+
+## CI/CD# Run with verbose output
+
+dotnet test --verbosity normal
+
+GitHub Actions automatically:```
+
+1. Starts SQL Server service
+
+2. Waits for readiness## Health Checks
+
+3. Executes initialization scripts
+
+4. Runs testsThe container includes health checks that verify SQL Server is ready to accept connections:
+
+
+
+For local development, **you must run the initialization script manually**.```powershell
+
+# Check container health
+docker-compose ps
+
+# Manual health check
+docker exec syrx-sqlserver-test /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P "YourStrong!Passw0rd" -Q "SELECT 1"
+```
 
 ## Troubleshooting
 
 ### Container Won't Start
-- Ensure port 1433 is not already in use
-- Check Docker Desktop is running
-- Verify password meets SQL Server complexity requirements
-
-### Database Not Ready
-- Wait for health check to show `healthy` status
-- Check logs for initialization progress
-- Allow up to 2 minutes for full initialization
+1. Check if port 1433 is already in use: `netstat -an | findstr 1433`
+2. Ensure Docker Desktop is running
+3. Check Docker logs: `docker-compose logs syrx-sqlserver-test`
 
 ### Connection Issues
-- Verify TrustServerCertificate=true is set
-- Check firewall settings
-- Ensure SQL Server Browser service is not interfering
+1. Verify container is healthy: `docker-compose ps`
+2. Test connection manually: `docker exec -it syrx-sqlserver-test /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P "YourStrong!Passw0rd" -Q "SELECT name FROM sys.databases;"`
+3. Check firewall settings if connecting from external machine
 
-## File Structure
+### Database Issues
+1. Check initialization logs: `docker-compose logs syrx-sqlserver-test`
+2. Connect to database and verify schema: `docker exec -it syrx-sqlserver-test /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P "YourStrong!Passw0rd" -Q "SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES;"`
+3. Verify test data: `docker exec -it syrx-sqlserver-test /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P "YourStrong!Passw0rd" -Q "SELECT COUNT(*) FROM poco;"`
 
+## Stopping the Test Database
+
+```powershell
+# Stop and remove containers
+docker-compose down
+
+# Stop, remove containers, and delete volumes (fresh start)
+docker-compose down -v
+
+# Remove all associated images (complete cleanup)
+docker-compose down -v --rmi all
 ```
-Docker/
-├── Dockerfile                          # Main Docker image definition
-├── docker-compose.yml                  # Docker Compose configuration
-├── init-database.sh                   # Database initialization script
-├── README.md                          # This file
-└── init-scripts/
-    ├── 01-create-database.sql         # Creates Syrx database
-    ├── 02-create-tables.sql           # Creates all test tables
-    ├── 03-create-procedures.sql       # Creates stored procedures
-    └── 04-seed-data.sql              # Seeds test data
-```
 
-This setup ensures that your `Syrx.SqlServer.Tests.Integration` tests have a consistent, isolated database environment that's ready to use immediately after container startup.
+## Performance Considerations
+
+- Container uses persistent volumes to maintain data between restarts
+- Official SQL Server 2022 base image for compatibility
+- Health checks ensure database readiness before tests run
+- Connection pooling handled by ADO.NET/SqlClient
+
+## Security Notes
+
+- Default password should be changed for production-like environments
+- Container runs on localhost only by default
+- Database user has full privileges for testing purposes
+
+## Compatibility
+
+This setup is compatible with:
+- SQL Server 2022
+- .NET 8.0+
+- Docker Engine 20.10+
+- Docker Compose 2.0+
+- Windows, macOS, and Linux development environments
