@@ -1,4 +1,6 @@
-﻿namespace Syrx.Commanders.Databases.Tests.Integration.DatabaseCommanderTests.SqlServerTests
+﻿using Syrx.SqlServer.Tests.Integration;
+
+namespace Syrx.Commanders.Databases.Tests.Integration.DatabaseCommanderTests.SqlServerTests
 {
     public static class SqlServerSetupExtensions
     {
