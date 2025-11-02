@@ -35,10 +35,16 @@ jobs:
       run: git submodule update --init --recursive
     - uses: actions/setup-dotnet@v5
       with:
-        dotnet-version: ${{ matrix.dotnet-version }}
-    - name: Build solution
-      run: dotnet build --configuration Release
-    - uses: actions/upload-artifact@v4
+          dotnet-version: ${{ matrix.dotnet-version }}
+      # You can test your matrix by printing the current dotnet version
+      name: Display dotnet version
+      #run: dotnet --version
+      
+    # Create the NuGet package in the folder from the environment variable NuGetDirectory
+    - run: dotnet build --configuration Release
+
+    # Publish the NuGet package as an artifact, so they can be used in the following jobs
+    - uses: actions/upload-artifact@v5
       with:
         name: nuget
         if-no-files-found: error
