@@ -28,7 +28,7 @@ jobs:
         dotnet-version: [ '8.0.x' ]
         
     steps:    
-    - uses: actions/checkout@v5
+    - uses: actions/checkout@v6
       name: Setup dotnet ${{ matrix.dotnet-version }}
       with:
         submodules: recursive
@@ -71,7 +71,7 @@ jobs:
   run_test:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v5
+    - uses: actions/checkout@v6
       with: 
         submodules: recursive
         
