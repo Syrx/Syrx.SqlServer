@@ -26,9 +26,9 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        dotnet-version: [ '8.0.x' ]
-    steps:
-    - uses: actions/checkout@v5
+        dotnet-version: [ '10.0.x' ]
+      steps:
+      - uses: actions/checkout@v6
       with:
         submodules: recursive
     - name: Initialize submodules
@@ -69,17 +69,17 @@ jobs:
         image: mcr.microsoft.com/mssql/server:2022-latest
         env:
           ACCEPT_EULA: Y
-          MSSQL_SA_PASSWORD: YourStrong!Passw0rd
+          MSSQL_SA_PASSWORD: ${{ secrets.MSSQL_SA_PASSWORD }}
           MSSQL_PID: Developer
         ports:
           - 1433:1433
         options: >-
-          --health-cmd="/opt/mssql-tools18/bin/sqlcmd -S localhost -U sa -P YourStrong!Passw0rd -C -Q 'SELECT 1'"
+          --health-cmd="/opt/mssql-tools18/bin/sqlcmd -S localhost -U sa -P ${{ secrets.MSSQL_SA_PASSWORD }} -C -Q 'SELECT 1'"
           --health-interval=10s
           --health-timeout=5s
           --health-retries=10
     steps:
-    - uses: actions/checkout@v5
+    - uses: actions/checkout@v6
       with:
         submodules: recursive
     - name: Initialize submodules
@@ -91,7 +91,7 @@ jobs:
         Write-Host "Waiting for SQL Server to be ready..."
         for ($i = 1; $i -le 30; $i++) {
           try {
-            /opt/mssql-tools18/bin/sqlcmd -S localhost -U sa -P YourStrong!Passw0rd -C -Q "SELECT 1"
+            /opt/mssql-tools18/bin/sqlcmd -S localhost -U sa -P "${{ secrets.MSSQL_SA_PASSWORD }}" -C -Q "SELECT 1"
             if ($LASTEXITCODE -eq 0) {
               Write-Host "SQL Server is ready!"
               break
@@ -108,13 +108,11 @@ jobs:
         if (Test-Path $scriptPath) {
           Get-ChildItem -Path $scriptPath -Filter "*.sql" | Sort-Object Name | ForEach-Object {
             Write-Host "Running script: $($_.Name)"
-            /opt/mssql-tools18/bin/sqlcmd -S localhost -U sa -P YourStrong!Passw0rd -C -i $_.FullName
+            /opt/mssql-tools18/bin/sqlcmd -S localhost -U sa -P "${{ secrets.MSSQL_SA_PASSWORD }}" -C -i $_.FullName
           }
         }
-    - name: Run tests (.NET 8.0)
-      run: dotnet test --configuration Release --framework net8.0
-    - name: Run tests (.NET 9.0)
-      run: dotnet test --configuration Release --framework net9.0
+    - name: Run tests (.NET 10.0)
+      run: dotnet test --configuration Release --framework net10.0
 
   deploy:
     if: github.event_name == 'release'
