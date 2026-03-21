@@ -16,7 +16,11 @@ namespace Syrx.SqlServer.Performance.Demo
     /// </summary>
     public class Program
     {
-        
+        /// <summary>
+        /// Entry point for the Syrx Phase 3 Performance Demo application.
+        /// </summary>
+        /// <param name="args">Command-line arguments passed to the application.</param>
+        /// <returns>A <see cref="Task"/> representing the asynchronous operation.</returns>
         public static async Task Main(string[] args)
         {
             Console.WriteLine("=== Syrx Phase 3 Performance Demo (Using Real Syrx Framework) ===");
@@ -81,10 +85,17 @@ namespace Syrx.SqlServer.Performance.Demo
         SqlConnection CreateConnection();
     }
 
+    /// <summary>
+    /// Provides SQL Server LocalDB connections for the Syrx Performance Demo.
+    /// </summary>
     public class LocalDbConnectionFactory : IDbConnectionFactory
     {
         private readonly string _connectionString = "Server=(localdb)\\syrx;Database=SyrxPhase3Demo;Trusted_Connection=true;";
-        
+
+        /// <summary>
+        /// Creates and returns a new <see cref="SqlConnection"/> to the LocalDB demo database.
+        /// </summary>
+        /// <returns>A new <see cref="SqlConnection"/> instance.</returns>
         public SqlConnection CreateConnection()
         {
             return new SqlConnection(_connectionString);
@@ -96,11 +107,22 @@ namespace Syrx.SqlServer.Performance.Demo
     /// </summary>
     public class DemoData
     {
+        /// <summary>Gets or sets the unique identifier of the demo data record.</summary>
         public int Id { get; set; }
+
+        /// <summary>Gets or sets the name associated with the demo data record.</summary>
         public string Name { get; set; } = string.Empty;
+
+        /// <summary>Gets or sets the integer value stored in the demo data record.</summary>
         public int Value { get; set; }
+
+        /// <summary>Gets or sets the UTC timestamp when the record was created.</summary>
         public DateTime CreatedAt { get; set; }
-        
+
+        /// <summary>
+        /// Returns a string representation of this <see cref="DemoData"/> instance.
+        /// </summary>
+        /// <returns>A formatted string showing <see cref="Id"/>, <see cref="Name"/>, and <see cref="Value"/>.</returns>
         public override string ToString() => $"Id: {Id}, Name: {Name}, Value: {Value}";
     }
 
@@ -112,12 +134,22 @@ namespace Syrx.SqlServer.Performance.Demo
     {
         private readonly ICommander<DemoRepository> _commander;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DemoRepository"/> class.
+        /// </summary>
+        /// <param name="commander">The Syrx commander used to execute database operations.</param>
+        /// <exception cref="ArgumentNullException">Thrown when <paramref name="commander"/> is <c>null</c>.</exception>
         public DemoRepository(ICommander<DemoRepository> commander)
         {
             _commander = commander ?? throw new ArgumentNullException(nameof(commander));
         }
 
         // REAL Syrx ICommander<T> calls - no more SqlConnection!
+        /// <summary>
+        /// Creates the <c>DemoData</c> table in the database if it does not already exist.
+        /// </summary>
+        /// <param name="method">The calling method name, resolved automatically by the compiler.</param>
+        /// <returns><c>true</c> if the operation succeeded; <c>false</c> otherwise.</returns>
         public async Task<bool> InitializeDatabaseAsync([CallerMemberName] string method = null!)
         {
             try
@@ -144,6 +176,13 @@ namespace Syrx.SqlServer.Performance.Demo
             }
         }
 
+        /// <summary>
+        /// Inserts a new record into the <c>DemoData</c> table.
+        /// </summary>
+        /// <param name="name">The name value to insert.</param>
+        /// <param name="value">The integer value to insert.</param>
+        /// <param name="method">The calling method name, resolved automatically by the compiler.</param>
+        /// <returns><c>true</c> if the insert succeeded; <c>false</c> otherwise.</returns>
         public async Task<bool> InsertDataAsync(string name, int value, [CallerMemberName] string method = null!)
         {
             try
@@ -163,6 +202,11 @@ namespace Syrx.SqlServer.Performance.Demo
             }
         }
 
+        /// <summary>
+        /// Retrieves all records from the <c>DemoData</c> table ordered by identifier.
+        /// </summary>
+        /// <param name="method">The calling method name, resolved automatically by the compiler.</param>
+        /// <returns>An <see cref="IEnumerable{T}"/> of <see cref="DemoData"/> records, or an empty collection on failure.</returns>
         public async Task<IEnumerable<DemoData>> GetAllDataAsync([CallerMemberName] string method = null!)
         {
             try
@@ -181,6 +225,11 @@ namespace Syrx.SqlServer.Performance.Demo
             }
         }
 
+        /// <summary>
+        /// Returns the total number of records in the <c>DemoData</c> table.
+        /// </summary>
+        /// <param name="method">The calling method name, resolved automatically by the compiler.</param>
+        /// <returns>The record count, or <c>0</c> if the query fails.</returns>
         public async Task<int> GetCountAsync([CallerMemberName] string method = null!)
         {
             try
@@ -200,6 +249,11 @@ namespace Syrx.SqlServer.Performance.Demo
             }
         }
 
+        /// <summary>
+        /// Deletes all records from the <c>DemoData</c> table.
+        /// </summary>
+        /// <param name="method">The calling method name, resolved automatically by the compiler.</param>
+        /// <returns><c>true</c> if the delete succeeded; <c>false</c> otherwise.</returns>
         public async Task<bool> ClearDataAsync([CallerMemberName] string method = null!)
         {
             try
@@ -227,12 +281,23 @@ namespace Syrx.SqlServer.Performance.Demo
         private readonly ILogger<RealSyrxDemoService> _logger;
         private readonly DemoRepository _repository;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RealSyrxDemoService"/> class.
+        /// </summary>
+        /// <param name="logger">The logger used for diagnostic output.</param>
+        /// <param name="repository">The <see cref="DemoRepository"/> used for data operations.</param>
+        /// <exception cref="ArgumentNullException">Thrown when any dependency is <c>null</c>.</exception>
         public RealSyrxDemoService(ILogger<RealSyrxDemoService> logger, DemoRepository repository)
         {
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
             _repository = repository ?? throw new ArgumentNullException(nameof(repository));
         }
 
+        /// <summary>
+        /// Executes the full Syrx framework demonstration, including concept explanations,
+        /// CRUD operations, and concurrent query examples.
+        /// </summary>
+        /// <returns>A <see cref="Task"/> representing the asynchronous operation.</returns>
         public async Task RunDemoAsync()
         {
             _logger.LogInformation("Starting REAL Syrx Framework Demo with actual ICommander calls...");

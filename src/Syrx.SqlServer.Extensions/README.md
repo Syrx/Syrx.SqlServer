@@ -7,6 +7,8 @@ Dependency injection and configuration extensions for Syrx SQL Server integratio
 - [Overview](#overview)
 - [Features](#features)
 - [Installation](#installation)
+- [Requirements](#requirements)
+- [Version Compatibility](#version-compatibility)
 - [Quick Start](#quick-start)
   - [Basic Configuration](#basic-configuration)
   - [Advanced Configuration](#advanced-configuration)
@@ -37,18 +39,27 @@ Dependency injection and configuration extensions for Syrx SQL Server integratio
 ## Installation
 
 ```bash
-dotnet add package Syrx.SqlServer.Extensions
+dotnet add package Syrx.SqlServer.Extensions --version 3.0.0
 ```
 
 **Package Manager**
 ```bash
-Install-Package Syrx.SqlServer.Extensions
+Install-Package Syrx.SqlServer.Extensions -Version 3.0.0
 ```
 
 **PackageReference**
 ```xml
 <PackageReference Include="Syrx.SqlServer.Extensions" Version="3.0.0" />
 ```
+
+## Requirements
+
+- .NET 10.0 SDK or runtime
+
+## Version Compatibility
+
+- 3.x supports .NET 10.0 only.
+- For .NET 8.0 or 9.0, use a 2.x release.
 
 ## Quick Start
 
@@ -187,6 +198,9 @@ public void ConfigureServices(IServiceCollection services)
             .AddCommand(/* command configuration */)));
 }
 ```
+
+See `.docs/SECURITY.md` for secure configuration.
+See `.docs/PERFORMANCE.md` for instrumentation setup.
 
 ## Related Packages
 

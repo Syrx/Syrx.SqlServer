@@ -7,6 +7,8 @@ Dependency injection extensions for Syrx SQL Server database connectors.
 - [Overview](#overview)
 - [Features](#features)
 - [Installation](#installation)
+- [Requirements](#requirements)
+- [Version Compatibility](#version-compatibility)
 - [Key Extensions](#key-extensions)
   - [ServiceCollectionExtensions](#servicecollectionextensions)
   - [SqlServerConnectorExtensions](#sqlserverconnectorextensions)
@@ -42,18 +44,27 @@ Dependency injection extensions for Syrx SQL Server database connectors.
 > **Note**: This package is typically installed automatically as a dependency of `Syrx.SqlServer.Extensions`.
 
 ```bash
-dotnet add package Syrx.Commanders.Databases.Connectors.SqlServer.Extensions
+dotnet add package Syrx.Commanders.Databases.Connectors.SqlServer.Extensions --version 3.0.0
 ```
 
 **Package Manager**
 ```bash
-Install-Package Syrx.Commanders.Databases.Connectors.SqlServer.Extensions
+Install-Package Syrx.Commanders.Databases.Connectors.SqlServer.Extensions -Version 3.0.0
 ```
 
 **PackageReference**
 ```xml
 <PackageReference Include="Syrx.Commanders.Databases.Connectors.SqlServer.Extensions" Version="3.0.0" />
 ```
+
+## Requirements
+
+- .NET 10.0 SDK or runtime
+
+## Version Compatibility
+
+- 3.x supports .NET 10.0 only.
+- For .NET 8.0 or 9.0, use a 2.x release.
 
 ## Key Extensions
 
@@ -199,6 +210,9 @@ services.UseSyrx(builder => builder
 var provider = services.BuildServiceProvider();
 var connector = provider.GetService<IDatabaseConnector>();
 ```
+
+See `.docs/SECURITY.md` for secure configuration.
+See `.docs/PERFORMANCE.md` for instrumentation setup.
 
 ## Related Packages
 

@@ -5,6 +5,8 @@ This project provides Syrx support for SqlServer. The overall experience of usin
 ## Table of Contents
 
 - [Installation](#installation)
+- [Requirements](#requirements)
+- [Documentation](#documentation)
 - [Extensions](#extensions)
 - [Credits](#credits) 
 
@@ -15,8 +17,8 @@ This project provides Syrx support for SqlServer. The overall experience of usin
 
 |Source|Command|
 |--|--|
-|.NET CLI|```dotnet add package Syrx.SqlServer.Extensions```
-|Package Manager|```Install-Package Syrx.SqlServer.Extensions```
+|.NET CLI|```dotnet add package Syrx.SqlServer.Extensions --version 3.0.0```
+|Package Manager|```Install-Package Syrx.SqlServer.Extensions -Version 3.0.0```
 |Package Reference|```<PackageReference Include="Syrx.SqlServer.Extensions" Version="3.0.0" />```|
 |Paket CLI|```paket add Syrx.SqlServer.Extensions --version 3.0.0```|
 
@@ -24,10 +26,21 @@ However, if you don't need the configuration options, you can install the standa
 
 |Source|Command|
 |--|--|
-|.NET CLI|```dotnet add package Syrx.SqlServer```
-|Package Manager|```Install-Package Syrx.SqlServer```
+|.NET CLI|```dotnet add package Syrx.SqlServer --version 3.0.0```
+|Package Manager|```Install-Package Syrx.SqlServer -Version 3.0.0```
 |Package Reference|```<PackageReference Include="Syrx.SqlServer" Version="3.0.0" />```|
 |Paket CLI|```paket add Syrx.SqlServer --version 3.0.0```|
+
+## Requirements
+
+- .NET 10.0 SDK or runtime
+- Package version 3.0.0
+
+## Documentation
+
+- See `.docs/SECURITY.md` for secure configuration.
+- See `.docs/PERFORMANCE.md` for instrumentation setup.
+- See [CHANGELOG.md](CHANGELOG.md) for detailed release changes.
 
 
 ## Extensions
@@ -35,7 +48,7 @@ The `Syrx.SqlServer.Extensions` package provides dependency injection support vi
 
 ```csharp
 // add a using statement to the top of the file or in a global usings file.
-using Syrx.Commanders.Databases.Connectors.SqlServer.Extensions;
+using Syrx.SqlServer.Extensions;
 
 public static IServiceCollection Install(this IServiceCollection services)
 {
