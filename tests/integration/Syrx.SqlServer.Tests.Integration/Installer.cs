@@ -1,7 +1,4 @@
-﻿using Syrx.Commanders.Databases.Tests.Integration.DatabaseCommanderTests.SqlServerTests;
-using Syrx.Commanders.Databases.Connectors.SqlServer.Extensions;
-
-namespace Syrx.SqlServer.Tests.Integration
+﻿namespace Syrx.SqlServer.Tests.Integration
 {
     public class Installer
     {
@@ -17,6 +14,12 @@ namespace Syrx.SqlServer.Tests.Integration
         {
             var builder = new DatabaseBuilder(commander);
             builder.Build();
+        }
+
+        public static void ValidatePrebuiltDatabase(ICommander<DatabaseBuilder> commander)
+        {
+            var builder = new DatabaseBuilder(commander);
+            builder.ValidatePrebuiltSchema();
         }
     }
 }

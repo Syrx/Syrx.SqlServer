@@ -1,9 +1,4 @@
-﻿using Microsoft.Extensions.Logging;
-using Testcontainers.MsSql;
-using DotNet.Testcontainers.Containers;
-using DotNet.Testcontainers.Builders;
-
-namespace Syrx.Commanders.Databases.Tests.Integration.DatabaseCommanderTests.SqlServerTests
+﻿namespace Syrx.Commanders.Databases.Tests.Integration.DatabaseCommanderTests.SqlServerTests
 {
     public class SqlServerFixture : Fixture, IAsyncLifetime
     {

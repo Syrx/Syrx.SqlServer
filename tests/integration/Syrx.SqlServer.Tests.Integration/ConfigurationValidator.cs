@@ -1,7 +1,3 @@
-using Microsoft.Data.SqlClient;
-using Microsoft.Extensions.DependencyInjection;
-using Syrx.SqlServer.Tests.Integration;
-
 namespace Syrx.Commanders.Databases.Tests.Integration.DatabaseCommanderTests.SqlServerTests
 {
     /// <summary>

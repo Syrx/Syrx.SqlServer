@@ -1,7 +1,4 @@
-﻿using Syrx.Commanders.Databases.Tests.Integration.DatabaseCommanderTests;
-using System.Transactions;
-
-namespace Syrx.SqlServer.Tests.Integration.DatabaseCommanderTests
+﻿namespace Syrx.SqlServer.Tests.Integration.DatabaseCommanderTests
 {
     [Collection(nameof(SqlServerFixtureCollection))]
     public class SqlServerExecuteAsync(SqlServerFixture fixture) : ExecuteAsync(fixture)
