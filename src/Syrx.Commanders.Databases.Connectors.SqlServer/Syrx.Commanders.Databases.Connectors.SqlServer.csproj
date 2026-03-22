@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 <PropertyGroup>
 <Description>This package provides support for SQL Server connections by implementing a SqlServerDatabaseConnector for the Syrx IDatabaseConnector. </Description>
 <PackageReleaseNotes>
@@ -11,10 +11,6 @@ Updated to .NET8.0.
 <ItemGroup>
 <PackageReference Include="Microsoft.Data.SqlClient" Version="7.0.0" />
 <PackageReference Include="Dapper" Version="2.1.72" />
-<PackageReference Include="Syrx.Analyzers.Usings" Version="1.1.1">
-  <PrivateAssets>all</PrivateAssets>
-  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-</PackageReference>
 <PackageReference Include="System.Diagnostics.PerformanceCounter" Version="10.0.5" />
 </ItemGroup>
 <ItemGroup>
