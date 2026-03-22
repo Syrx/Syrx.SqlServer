@@ -8,6 +8,10 @@
         private static readonly string _saPassword =
             Environment.GetEnvironmentVariable("MSSQL_SA_PASSWORD") ?? "YourStrong!Passw0rd";
 
+        // Use a public image by default so CI does not depend on a locally-built/private image.
+        private static readonly string _sqlServerImage =
+            Environment.GetEnvironmentVariable("SYRX_SQLSERVER_TEST_IMAGE") ?? "mcr.microsoft.com/mssql/server:2022-latest";
+
         public SqlServerFixture()
         {
             var _logger = LoggerFactory.Create(b => b
@@ -16,10 +20,12 @@
                 .AddSimpleConsole()).CreateLogger<SqlServerFixture>();
 
             _container = new MsSqlBuilder()
-                .WithImage("docker-syrx-sqlserver-test:latest")
+                .WithImage(_sqlServerImage)
                 .WithLogger(_logger)
                 .WithReuse(true)
                 .WithPassword(_saPassword)
+                .WithEnvironment("ACCEPT_EULA", "Y")
+                .WithEnvironment("MSSQL_PID", "Developer")
                 .WithWaitStrategy(Wait.ForUnixContainer()
                     .UntilInternalTcpPortIsAvailable(1433)
                     .UntilCommandIsCompleted("/opt/mssql-tools18/bin/sqlcmd", "-S", "localhost", "-U", "sa", "-P", _saPassword, "-Q", "SELECT 1", "-C"))
