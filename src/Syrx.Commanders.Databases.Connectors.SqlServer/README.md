@@ -7,6 +7,8 @@ Core SQL Server database connector for the Syrx data access framework.
 - [Overview](#overview)
 - [Features](#features)
 - [Installation](#installation)
+- [Requirements](#requirements)
+- [Version Compatibility](#version-compatibility)
 - [Architecture](#architecture)
 - [Usage](#usage)
 - [Configuration](#configuration)
@@ -33,18 +35,27 @@ Core SQL Server database connector for the Syrx data access framework.
 > **Note**: This package is typically installed as a dependency of higher-level packages like `Syrx.SqlServer.Extensions`.
 
 ```bash
-dotnet add package Syrx.Commanders.Databases.Connectors.SqlServer
+dotnet add package Syrx.Commanders.Databases.Connectors.SqlServer --version 3.0.0
 ```
 
 **Package Manager**
 ```bash
-Install-Package Syrx.Commanders.Databases.Connectors.SqlServer
+Install-Package Syrx.Commanders.Databases.Connectors.SqlServer -Version 3.0.0
 ```
 
 **PackageReference**
 ```xml
 <PackageReference Include="Syrx.Commanders.Databases.Connectors.SqlServer" Version="3.0.0" />
 ```
+
+## Requirements
+
+- .NET 10.0 SDK or runtime
+
+## Version Compatibility
+
+- 3.x supports .NET 10.0 only.
+- For .NET 8.0 or 9.0, use a 2.x release.
 
 ## Architecture
 
@@ -175,6 +186,9 @@ The connector leverages ADO.NET connection pooling automatically:
 2. **Proper Disposal**: Always dispose connections (handled automatically by framework)
 3. **Connection String Caching**: Settings are cached for performance
 4. **Avoid Long-Running Connections**: Create connections per operation
+
+See `.docs/SECURITY.md` for secure configuration.
+See `.docs/PERFORMANCE.md` for instrumentation setup.
 
 ## Related Packages
 

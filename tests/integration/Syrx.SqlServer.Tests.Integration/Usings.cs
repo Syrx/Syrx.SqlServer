@@ -1,7 +1,17 @@
+global using DotNet.Testcontainers.Builders;
+global using DotNet.Testcontainers.Containers;
+global using Microsoft.Data.SqlClient;
 global using Microsoft.Extensions.DependencyInjection;
+global using Microsoft.Extensions.Logging;
 global using Syrx.Commanders.Databases.Connectors.SqlServer.Extensions;
 global using Syrx.Commanders.Databases.Settings.Extensions;
+global using Syrx.Commanders.Databases.Tests.Integration;
+global using Syrx.Commanders.Databases.Tests.Integration.DatabaseCommanderTests;
+global using Syrx.Commanders.Databases.Tests.Integration.DatabaseCommanderTests.SqlServerTests;
 global using Syrx.Extensions;
+global using Syrx.SqlServer.Tests.Integration;
+global using Syrx.SqlServer.Tests.Integration.DatabaseCommanderTests;
 global using System.Data;
-global using Testcontainers.MsSql;
+global using System.Transactions;
 global using static Syrx.Validation.Contract;
+global using Testcontainers.MsSql;

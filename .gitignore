@@ -55,4 +55,9 @@ Temporary Items
 /_NCrunch_Syrx
 **/obj
 **/bin
+
+# Environment variable files — never commit secrets
+.env
+.env.local
+.env.*.local
 /.NCrunch_Syrx.SqlServer/*

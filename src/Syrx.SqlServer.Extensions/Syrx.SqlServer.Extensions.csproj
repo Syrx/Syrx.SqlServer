@@ -1,9 +1,11 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
 		<Description>This package hosts extension methods to make wiring up support for SQL Server databases simpler and easier. </Description>
 		<PackageTags>syrx;data access;orm;micro-orm;sql;sql-server</PackageTags>
 		<PackageReadmeFile>readme.md</PackageReadmeFile>
 	</PropertyGroup>
+	<ItemGroup>
+</ItemGroup>
 
 	<ItemGroup>
 		<ProjectReference Include="..\Syrx.Commanders.Databases.Connectors.SqlServer.Extensions\Syrx.Commanders.Databases.Connectors.SqlServer.Extensions.csproj" />
@@ -11,7 +13,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <PackageReference Update="DotNet.ReproducibleBuilds" Version="1.2.39" />
+	  <PackageReference Update="DotNet.ReproducibleBuilds" Version="2.0.2" />
 	</ItemGroup>
 
 </Project>

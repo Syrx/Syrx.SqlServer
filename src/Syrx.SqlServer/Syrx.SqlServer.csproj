@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
 		<Description>This package provides Syrx support for SQL Server databases.</Description>
 		<PackageReleaseNotes>
@@ -8,6 +8,8 @@
 		<PackageTags>syrx;data access;orm;micro-orm;sql;sql-server</PackageTags>
 		<PackageReadmeFile>readme.md</PackageReadmeFile>
 	</PropertyGroup>
+	<ItemGroup>
+</ItemGroup>
 
 	<ItemGroup>
 		<ProjectReference Include="..\..\.submodules\Syrx.Commanders.Databases\src\Syrx.Commanders.Databases\Syrx.Commanders.Databases.csproj" />
@@ -15,7 +17,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <PackageReference Update="DotNet.ReproducibleBuilds" Version="1.2.39" />
+	  <PackageReference Update="DotNet.ReproducibleBuilds" Version="2.0.2" />
 	</ItemGroup>
 
 </Project>

@@ -5,16 +5,47 @@
 
 version: 2
 updates:
+  # NuGet package updates - weekly to avoid update fatigue while staying current
   - package-ecosystem: "nuget"
     directory: "/"
     schedule:
-      interval: "daily"
+      interval: "weekly"
+      day: "monday"
+      time: "03:00"
+    open-pull-requests-limit: 10
+    pull-request-branch-name:
+      separator: "/"
+    commit-message:
+      prefix: "deps(nuget):"
+    groups:
+      development-dependencies:
+        dependency-type: "development"
+      production-dependencies:
+        dependency-type: "production"
+
+  # GitHub Actions - check for critical security updates daily
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
       interval: "daily"
-# adding for submodule sync as per https://stackoverflow.com/a/73229032
-  - package-ecosystem: gitsubmodule
+      time: "03:00"
+    open-pull-requests-limit: 5
+    pull-request-branch-name:
+      separator: "/"
+    commit-message:
+      prefix: "ci(actions):"
+    groups:
+      github-actions:
+        patterns:
+          - "actions/*"
+
+  # Git submodule sync - daily to keep Syrx submodule current
+  - package-ecosystem: "gitsubmodule"
+    directory: "/"
     schedule:
-        interval: "daily"
-    directory: /
+      interval: "daily"
+      time: "03:00"
+    pull-request-branch-name:
+      separator: "/"
+    commit-message:
+      prefix: "deps(submodules):"

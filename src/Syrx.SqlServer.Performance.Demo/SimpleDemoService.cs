@@ -14,11 +14,21 @@ namespace Syrx.Commanders.Databases.Connectors.SqlServer
         private readonly ConcurrentDictionary<string, IDbConnection> _connectionPool = new();
         private volatile bool _disposed;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SimpleDemoConnector"/> class.
+        /// </summary>
+        /// <param name="connectionString">The SQL Server connection string to use for all connections.</param>
+        /// <exception cref="ArgumentNullException">Thrown when <paramref name="connectionString"/> is <c>null</c>.</exception>
         public SimpleDemoConnector(string connectionString)
         {
             _connectionString = connectionString ?? throw new ArgumentNullException(nameof(connectionString));
         }
 
+        /// <summary>
+        /// Creates and returns a new closed <see cref="IDbConnection"/> to the configured SQL Server.
+        /// </summary>
+        /// <returns>A new <see cref="SqlConnection"/> wrapping the configured connection string.</returns>
+        /// <exception cref="ObjectDisposedException">Thrown if this connector has been disposed.</exception>
         public IDbConnection CreateConnection()
         {
             if (_disposed)
@@ -27,6 +37,11 @@ namespace Syrx.Commanders.Databases.Connectors.SqlServer
             return new SqlConnection(_connectionString);
         }
 
+        /// <summary>
+        /// Creates, opens, and returns a new <see cref="IDbConnection"/> to the configured SQL Server.
+        /// </summary>
+        /// <returns>A <see cref="Task"/> whose result is an open <see cref="SqlConnection"/>.</returns>
+        /// <exception cref="ObjectDisposedException">Thrown if this connector has been disposed.</exception>
         public async Task<IDbConnection> CreateConnectionAsync()
         {
             if (_disposed)
@@ -37,6 +52,9 @@ namespace Syrx.Commanders.Databases.Connectors.SqlServer
             return connection;
         }
 
+        /// <summary>
+        /// Releases all managed resources held by this connector, including any pooled connections.
+        /// </summary>
         public void Dispose()
         {
             if (_disposed)
@@ -57,8 +75,13 @@ namespace Syrx.Commanders.Databases.Connectors.SqlServer
     /// </summary>
     public class DemoDataModel
     {
+        /// <summary>Gets or sets the unique identifier of the demo record.</summary>
         public int Id { get; set; }
+
+        /// <summary>Gets or sets the name associated with the demo record.</summary>
         public string Name { get; set; } = string.Empty;
+
+        /// <summary>Gets or sets the integer value stored in the demo record.</summary>
         public int Value { get; set; }
     }
 
@@ -70,12 +93,20 @@ namespace Syrx.Commanders.Databases.Connectors.SqlServer
         private readonly SimpleDemoConnector _connector;
         private readonly string _connectionString;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SimpleDemoService"/> class.
+        /// </summary>
+        /// <param name="connectionString">The SQL Server connection string to use for all demo operations.</param>
         public SimpleDemoService(string connectionString)
         {
             _connectionString = connectionString;
             _connector = new SimpleDemoConnector(connectionString);
         }
 
+        /// <summary>
+        /// Executes the full demonstration of basic database operations using direct ADO.NET via the connector.
+        /// </summary>
+        /// <returns>A <see cref="Task"/> representing the asynchronous operation.</returns>
         public async Task RunDemoAsync()
         {
             Console.WriteLine("=== Syrx Phase 3 Performance Demo (Simplified Version) ===");
@@ -258,6 +289,9 @@ namespace Syrx.Commanders.Databases.Connectors.SqlServer
             Console.WriteLine("different operation types while maintaining code simplicity.");
         }
 
+        /// <summary>
+        /// Releases all resources used by the <see cref="SimpleDemoService"/>.
+        /// </summary>
         public void Dispose()
         {
             _connector?.Dispose();

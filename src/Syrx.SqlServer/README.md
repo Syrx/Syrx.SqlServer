@@ -7,6 +7,8 @@ Microsoft SQL Server database provider for the Syrx data access framework.
 - [Overview](#overview)
 - [Features](#features)
 - [Installation](#installation)
+- [Requirements](#requirements)
+- [Version Compatibility](#version-compatibility)
 - [Quick Start](#quick-start)
   - [1. Configure Services](#1-configure-services)
   - [2. Create Repository](#2-create-repository)
@@ -39,18 +41,18 @@ Microsoft SQL Server database provider for the Syrx data access framework.
 > **Recommended**: Install the Extensions package for easier configuration and setup.
 
 ```bash
-dotnet add package Syrx.SqlServer.Extensions
+dotnet add package Syrx.SqlServer.Extensions --version 3.0.0
 ```
 
 **Core Package Only**
 ```bash
-dotnet add package Syrx.SqlServer
+dotnet add package Syrx.SqlServer --version 3.0.0
 ```
 
 **Package Manager**
 ```bash
-Install-Package Syrx.SqlServer.Extensions
-Install-Package Syrx.SqlServer
+Install-Package Syrx.SqlServer.Extensions -Version 3.0.0
+Install-Package Syrx.SqlServer -Version 3.0.0
 ```
 
 **PackageReference**
@@ -58,6 +60,15 @@ Install-Package Syrx.SqlServer
 <PackageReference Include="Syrx.SqlServer.Extensions" Version="3.0.0" />
 <PackageReference Include="Syrx.SqlServer" Version="3.0.0" />
 ```
+
+## Requirements
+
+- .NET 10.0 SDK or runtime
+
+## Version Compatibility
+
+- 3.x supports .NET 10.0 only.
+- For .NET 8.0 or 9.0, use a 2.x release.
 
 ## Quick Start
 
@@ -204,6 +215,8 @@ Server=localhost;Database=MyDatabase;Integrated Security=true;
 - Consider connection pooling settings
 - Optimize command timeout values based on query complexity
 - Use async methods for I/O-bound operations
+- See `.docs/PERFORMANCE.md` for instrumentation setup.
+- See `.docs/SECURITY.md` for secure configuration.
 
 ## Related Packages
 

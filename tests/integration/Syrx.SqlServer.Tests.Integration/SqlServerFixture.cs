@@ -1,13 +1,16 @@
-﻿using Microsoft.Extensions.Logging;
-using Testcontainers.MsSql;
-using DotNet.Testcontainers.Containers;
-using DotNet.Testcontainers.Builders;
-
-namespace Syrx.Commanders.Databases.Tests.Integration.DatabaseCommanderTests.SqlServerTests
+﻿namespace Syrx.Commanders.Databases.Tests.Integration.DatabaseCommanderTests.SqlServerTests
 {
     public class SqlServerFixture : Fixture, IAsyncLifetime
     {
         private readonly MsSqlContainer _container;
+
+        // Fallback only for local development — override with MSSQL_SA_PASSWORD env var in CI/production
+        private static readonly string _saPassword =
+            Environment.GetEnvironmentVariable("MSSQL_SA_PASSWORD") ?? "YourStrong!Passw0rd";
+
+        // Use a public image by default so CI does not depend on a locally-built/private image.
+        private static readonly string _sqlServerImage =
+            Environment.GetEnvironmentVariable("SYRX_SQLSERVER_TEST_IMAGE") ?? "mcr.microsoft.com/mssql/server:2022-latest";
 
         public SqlServerFixture()
         {
@@ -17,13 +20,15 @@ namespace Syrx.Commanders.Databases.Tests.Integration.DatabaseCommanderTests.Sql
                 .AddSimpleConsole()).CreateLogger<SqlServerFixture>();
 
             _container = new MsSqlBuilder()
-                .WithImage("docker-syrx-sqlserver-test:latest")
+                .WithImage(_sqlServerImage)
                 .WithLogger(_logger)
                 .WithReuse(true)
-                .WithPassword("YourStrong!Passw0rd")
+                .WithPassword(_saPassword)
+                .WithEnvironment("ACCEPT_EULA", "Y")
+                .WithEnvironment("MSSQL_PID", "Developer")
                 .WithWaitStrategy(Wait.ForUnixContainer()
                     .UntilInternalTcpPortIsAvailable(1433)
-                    .UntilCommandIsCompleted("/opt/mssql-tools18/bin/sqlcmd", "-S", "localhost", "-U", "sa", "-P", "YourStrong!Passw0rd", "-Q", "SELECT 1", "-C"))
+                    .UntilCommandIsCompleted("/opt/mssql-tools18/bin/sqlcmd", "-S", "localhost", "-U", "sa", "-P", _saPassword, "-Q", "SELECT 1", "-C"))
                 .WithStartupCallback((container, token) =>
                 {
                     var message = @$"{new string('=', 150)}
@@ -73,7 +78,9 @@ ConnectionString . : {((MsSqlContainer)container).GetConnectionString()}
                 var connectionString = ModifyConnectionStringForSyrxDatabase(baseConnectionString, actualPassword);
                 var alias = "Syrx.Sql";
 
-                Console.WriteLine($"[SqlServerFixture] Initializing with connection: {connectionString}");
+                // Log sanitized connection info only — never log the raw connection string
+                var logBuilder = new Microsoft.Data.SqlClient.SqlConnectionStringBuilder(connectionString);
+                Console.WriteLine($"[SqlServerFixture] Initializing with Server={logBuilder.DataSource}, Database={logBuilder.InitialCatalog}");
 
                 // Validate container health before proceeding
                 await ValidateContainerHealth();
@@ -184,7 +191,9 @@ ConnectionString . : {((MsSqlContainer)container).GetConnectionString()}
             try
             {
                 Console.WriteLine("[SqlServerFixture] Testing basic database connectivity...");
-                Console.WriteLine($"[SqlServerFixture] Using connection string: {connectionString}");
+                // Log sanitized info only — never log raw connection strings
+                var logBuilder = new Microsoft.Data.SqlClient.SqlConnectionStringBuilder(connectionString);
+                Console.WriteLine($"[SqlServerFixture] Connecting to Server={logBuilder.DataSource}, Database={logBuilder.InitialCatalog}");
                 
                 using var connection = new Microsoft.Data.SqlClient.SqlConnection(connectionString);
                 await connection.OpenAsync();
@@ -207,7 +216,7 @@ ConnectionString . : {((MsSqlContainer)container).GetConnectionString()}
             catch (Exception ex)
             {
                 Console.WriteLine($"[SqlServerFixture] Basic connectivity test failed: {ex.Message}");
-                Console.WriteLine($"[SqlServerFixture] Connection string used: {connectionString}");
+                // Do not log the connection string — it may contain credentials
                 
                 // Try connecting to master database instead to see if the issue is database-specific
                 try
@@ -247,20 +256,19 @@ ConnectionString . : {((MsSqlContainer)container).GetConnectionString()}
                     return builder.Password;
                 }
                 
-                // If connection string doesn't have password, our custom image should be using the hardcoded password
-                var customImagePassword = "YourStrong!Passw0rd";
-                Console.WriteLine($"[SqlServerFixture] Using custom Docker image password: {customImagePassword}");
+                // If connection string doesn't have password, fall back to configured SA password
+                Console.WriteLine("[SqlServerFixture] Using configured SA password from environment");
                 
                 // Verify this password works by testing a connection
-                await TestPasswordConnection(baseConnectionString, customImagePassword);
+                await TestPasswordConnection(baseConnectionString, _saPassword);
                 
-                return customImagePassword;
+                return _saPassword;
             }
             catch (Exception ex)
             {
                 Console.WriteLine($"[SqlServerFixture] Error extracting password: {ex.Message}");
-                // Return our custom Docker image password as fallback
-                return "YourStrong!Passw0rd";
+                // Return configured SA password as fallback
+                return _saPassword;
             }
         }
 

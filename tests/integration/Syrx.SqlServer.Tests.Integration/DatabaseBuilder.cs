@@ -9,8 +9,6 @@
             _commander = commander;
         }
 
-
-
         public DatabaseBuilder ClearTable(string name = "poco")
         {
             Throw<ArgumentNullException>(!string.IsNullOrWhiteSpace(name), nameof(name));
@@ -36,6 +34,12 @@
             }
 
             return this;
+        }
+
+        public DatabaseBuilder Build()
+        {
+            // For SQL Server, Build just clears and populates the table
+            return ClearTable().Populate();
         }
 
         /// <summary>

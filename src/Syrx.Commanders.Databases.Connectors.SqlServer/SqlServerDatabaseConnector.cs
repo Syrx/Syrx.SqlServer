@@ -1,6 +1,3 @@
-using Microsoft.Data.SqlClient;
-using Syrx.Commanders.Databases.Connectors;
-using Syrx.Commanders.Databases.Settings;
 
 namespace Syrx.Commanders.Databases.Connectors.SqlServer
 {
