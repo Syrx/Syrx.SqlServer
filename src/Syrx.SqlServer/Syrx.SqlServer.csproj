@@ -2,7 +2,7 @@
 	<PropertyGroup>
 		<Description>This package provides Syrx support for SQL Server databases.</Description>
 		<PackageReleaseNotes>
-			Updated to .NET8.0.
+			Updated to .NET10.0.
 			Try using the new Syrx.SqlServer.Extensions to simplify wiring up and configuration!
 		</PackageReleaseNotes>
 		<PackageTags>syrx;data access;orm;micro-orm;sql;sql-server</PackageTags>

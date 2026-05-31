@@ -3,7 +3,7 @@
 <Description>This package provides support for SQL Server connections by implementing a SqlServerDatabaseConnector for the Syrx IDatabaseConnector. </Description>
 <PackageReleaseNotes>
 BREAKING CHANGE: Changed namespace.
-Updated to .NET8.0.
+Updated to .NET10.0.
 </PackageReleaseNotes>
 	<PackageReadmeFile>readme.md</PackageReadmeFile>
 <PackageTags>syrx;data access;orm;micro-orm;sql;sql-server</PackageTags>
