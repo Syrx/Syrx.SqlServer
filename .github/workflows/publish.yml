@@ -32,14 +32,14 @@ jobs:
         dotnet-version: [ '10.0.x' ]
         
     steps:
-    - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+    - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
       with:
         submodules: recursive
       name: Setup dotnet ${{ matrix.dotnet-version }}
     - name: Update Git submodules
       run: git submodule update --init --recursive
      
-    - uses: actions/setup-dotnet@c2fa09f4bde5ebb9d1777cf28262a3eb3db3ced7 # v5.2.0
+    - uses: actions/setup-dotnet@9a946fdbd5fb07b82b2f5a4466058b876ab72bb2 # v5.3.0
       with:
           dotnet-version: ${{ matrix.dotnet-version }}
       # You can test your matrix by printing the current dotnet version
@@ -50,7 +50,7 @@ jobs:
     - run: dotnet build --configuration Release
 
     # Publish the NuGet package as an artifact, so they can be used in the following jobs
-    - uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
+    - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
       with:
         name: nuget
         if-no-files-found: error
@@ -63,7 +63,7 @@ jobs:
     steps:
       # Install the .NET SDK indicated in the global.json file
       - name: Setup .NET
-        uses: actions/setup-dotnet@c2fa09f4bde5ebb9d1777cf28262a3eb3db3ced7 # v5.2.0
+        uses: actions/setup-dotnet@9a946fdbd5fb07b82b2f5a4466058b876ab72bb2 # v5.3.0
         with:
           dotnet-version: 10.0.x
 
@@ -78,14 +78,14 @@ jobs:
     permissions:
       contents: read # Required for repository checkout.
     steps:
-    - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+    - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
       with:
         submodules: recursive
 
     - name: Initialize submodules
       run: git submodule update --init --recursive
     - name: Setup .NET
-      uses: actions/setup-dotnet@c2fa09f4bde5ebb9d1777cf28262a3eb3db3ced7 # v5.2.0
+      uses: actions/setup-dotnet@9a946fdbd5fb07b82b2f5a4466058b876ab72bb2 # v5.3.0
       with:
         dotnet-version: 10.0.x
     - name: Run tests
@@ -107,7 +107,7 @@ jobs:
 
       # Install the .NET SDK indicated in the global.json file
       - name: Setup .NET Core
-        uses: actions/setup-dotnet@c2fa09f4bde5ebb9d1777cf28262a3eb3db3ced7 # v5.2.0
+        uses: actions/setup-dotnet@9a946fdbd5fb07b82b2f5a4466058b876ab72bb2 # v5.3.0
         with:
           dotnet-version: 10.0.x
 
